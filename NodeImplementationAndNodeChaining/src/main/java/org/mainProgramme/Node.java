@@ -1,15 +1,15 @@
 package org.mainProgramme;
 
-public class Node {
-    public int Value;
-    public Node Next;
+public class Node<T> {
+    public T Value;
+    public Node<T> Next;
 
-    public Node(int Value) {
+    public Node(T Value) {
         this.Value = Value;
         this.Next = null; // defaultly set to null
     }
 
-    public int getValue() {
+    public T getValue() {
         return this.Value;
     }
 
