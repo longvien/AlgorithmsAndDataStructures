@@ -38,10 +38,15 @@ public class DoublyLinkedList<T> {
     // remove a node
     public void remove(T value){
         DoublyNode<T> node = head;
+
         if (contains(value)) {
             while (node != null) {
                 if (node.value.equals(value)) {
-                    if (node.previous == null){
+                    if (head == node && tail == node) {
+                        head = null;
+                        tail = null;
+                    }
+                    else if (node.previous == null){
                         node.next.previous = null;
                         head = node.next;
                         node.next = null;

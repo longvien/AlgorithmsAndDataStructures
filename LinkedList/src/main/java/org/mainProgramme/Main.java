@@ -37,11 +37,11 @@ public class Main {
         dll.addHead(300);
         dll.returnValueHeadToTail();
         dll.addTail(50);
-        dll.remove(300);
+        dll.remove(100);
         dll.returnValueTailToHead();
 
         // head -> [300] <-> ([200] <-> is removed) [100] <-> [50] <- tail
-        System.out.println(dll.contains(200));
+        System.out.println(dll.contains(100));
 
     }
 
