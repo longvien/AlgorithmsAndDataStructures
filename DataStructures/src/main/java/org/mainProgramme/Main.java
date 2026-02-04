@@ -43,6 +43,22 @@ public class Main {
         // head -> [300] <-> ([200] <-> is removed) [100] <-> [50] <- tail
         System.out.println(dll.contains(100));
 
+        for (int value : dll) {
+            System.out.println(value);
+        } // foreach runs iterator secretly behind
+        for (int value : dll.reverse()) {
+            System.out.println(value);
+        }
+
+
+        //SortedList
+        System.out.println("SortedList");
+        SortedLinkedList<Integer> sll = new SortedLinkedList<>();
+        sll.add(2);
+        sll.add(6);
+        sll.add(1);
+        sll.add(4);
+        sll.displayValue();
     }
 
 

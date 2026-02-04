@@ -2,9 +2,51 @@ package org.mainProgramme;
 
 import org.mainProgramme.Node.DoublyNode;
 
-public class DoublyLinkedList<T> {
+import java.util.Iterator;
+
+public class DoublyLinkedList<T> implements Iterable<T>{
     public DoublyNode<T> head = null;
     public DoublyNode<T> tail = null;
+    public int count;
+
+    public Iterable<T> reverse() {
+        return new Iterable<> () { //1st Anonymous class implements Iterable<T>
+            @Override
+            public Iterator<T> iterator() {
+                return new Iterator<>() { //2nd Anonymous class implements Iterator<>
+                    DoublyNode<T> current = tail;
+                    @Override
+                    public boolean hasNext() {
+                        return current != null;
+                    }
+                    @Override
+                    public T next() {
+                        T value = current.value;
+                        current = current.previous;
+                        return value;
+                    }
+                };
+            }
+        };
+    }
+
+    public Iterator<T> iterator() {
+        return new Iterator<> () { // Anonymous class created
+            DoublyNode<T> current = head;
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+            @Override
+            public T next() {
+                T value = current.value;
+                current = current.next;
+                return value;
+            }
+        };
+    }
+
+
     // add node to head
     public void addHead(T value) {
         DoublyNode<T> newNode = new DoublyNode<>(value);
@@ -18,8 +60,7 @@ public class DoublyLinkedList<T> {
             head = newNode;
             tail = newNode;
         }
-
-
+        count++;
     }
     // add node to tail
     public void addTail(T value) {
@@ -34,6 +75,7 @@ public class DoublyLinkedList<T> {
             head = newNode;
             tail = newNode;
         }
+        count++;
     }
     // remove a node
     public void remove(T value){
@@ -63,6 +105,7 @@ public class DoublyLinkedList<T> {
                         node.previous = null;
                     }
                 }
+                count--;
                 node = node.next;
             }
         }
@@ -70,8 +113,6 @@ public class DoublyLinkedList<T> {
             System.out.println("Node doesn't exist!");
         }
     }
-
-
     public void returnValueHeadToTail() {
         DoublyNode<T> current = head;
         while (current != null) {
