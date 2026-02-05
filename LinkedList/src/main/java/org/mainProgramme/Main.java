@@ -54,10 +54,10 @@ public class Main {
         //SortedList
         System.out.println("SortedList");
         SortedLinkedList<Integer> sll = new SortedLinkedList<>();
-        sll.add(2);
         sll.add(6);
-        sll.add(1);
-        sll.add(4);
+        sll.add(6);
+        sll.add(5);
+        sll.add(2);
         sll.displayValue();
     }
 

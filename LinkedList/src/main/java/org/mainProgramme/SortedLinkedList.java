@@ -6,6 +6,7 @@ public class SortedLinkedList<T extends Comparable<T>> {
     public SortedNode<T> head = null;
     public SortedNode<T> tail = null;
 
+    //add a node in a sorted direction
     public void add(T value) {
         SortedNode<T> newNode = new SortedNode<>(value);
         SortedNode<T> current = head;
@@ -24,17 +25,13 @@ public class SortedLinkedList<T extends Comparable<T>> {
             tail = newNode;
         }
         else {
-            while (current != null) {
-                if (newNode.value.compareTo(current.value) > 0) {
-                    current = current.next;
-                    if (newNode.value.compareTo(current.value) < 0) {
-                        newNode.next = current;
-                        newNode.previous = current.previous;
-                        current.previous.next = newNode;
-                        current.previous = newNode;
-                    }
-                }
+            while (newNode.value.compareTo(current.value) > 0) {
+                current = current.next;
             }
+            newNode.next = current;
+            newNode.previous = current.previous;
+            current.previous.next = newNode;
+            current.previous = newNode;
         }
     }
 
