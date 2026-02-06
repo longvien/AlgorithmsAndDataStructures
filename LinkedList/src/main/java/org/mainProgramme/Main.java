@@ -60,6 +60,4 @@ public class Main {
         sll.add(2);
         sll.displayValue();
     }
-
-
 }
