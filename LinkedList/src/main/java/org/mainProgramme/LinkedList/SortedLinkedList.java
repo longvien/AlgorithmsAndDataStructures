@@ -1,4 +1,4 @@
-package org.mainProgramme;
+package org.mainProgramme.LinkedList;
 
 import org.mainProgramme.Node.SortedNode;
 

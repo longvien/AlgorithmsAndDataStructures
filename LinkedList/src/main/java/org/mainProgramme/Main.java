@@ -1,5 +1,7 @@
 package org.mainProgramme;
 
+import org.mainProgramme.LinkedList.DoublyLinkedList;
+import org.mainProgramme.LinkedList.SortedLinkedList;
 import org.mainProgramme.Node.SinglyNode;
 import org.mainProgramme.Node.DoublyNode;
 
@@ -37,7 +39,8 @@ public class Main {
         dll.addHead(300);
         dll.returnValueHeadToTail();
         dll.addTail(50);
-        dll.remove(100);
+        dll.removeHead();
+        dll.removeTail();
         dll.returnValueTailToHead();
 
         // head -> [300] <-> ([200] <-> is removed) [100] <-> [50] <- tail
@@ -49,7 +52,6 @@ public class Main {
         for (int value : dll.reverse()) {
             System.out.println(value);
         }
-
 
         //SortedList
         System.out.println("SortedList");

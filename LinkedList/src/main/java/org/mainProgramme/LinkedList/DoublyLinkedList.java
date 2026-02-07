@@ -1,4 +1,4 @@
-package org.mainProgramme;
+package org.mainProgramme.LinkedList;
 
 import org.mainProgramme.Node.DoublyNode;
 
@@ -7,7 +7,6 @@ import java.util.Iterator;
 public class DoublyLinkedList<T> implements Iterable<T>{
     public DoublyNode<T> head = null;
     public DoublyNode<T> tail = null;
-    public int count;
 
     public Iterable<T> reverse() {
         return new Iterable<> () { //1st Anonymous class implements Iterable<T>
@@ -30,6 +29,7 @@ public class DoublyLinkedList<T> implements Iterable<T>{
         };
     }
 
+    // foreach calls iterator() automatically behind
     public Iterator<T> iterator() {
         return new Iterator<> () { // Anonymous class created
             DoublyNode<T> current = head;
@@ -46,7 +46,6 @@ public class DoublyLinkedList<T> implements Iterable<T>{
         };
     }
 
-
     // add node to head
     public void addHead(T value) {
         DoublyNode<T> newNode = new DoublyNode<>(value);
@@ -60,8 +59,8 @@ public class DoublyLinkedList<T> implements Iterable<T>{
             head = newNode;
             tail = newNode;
         }
-        count++;
     }
+
     // add node to tail
     public void addTail(T value) {
         DoublyNode<T> newNode = new DoublyNode<>(value);
@@ -75,16 +74,16 @@ public class DoublyLinkedList<T> implements Iterable<T>{
             head = newNode;
             tail = newNode;
         }
-        count++;
     }
-    // remove a node
-    public void remove(T value){
-        DoublyNode<T> node = head;
 
+    // remove a node base on it's value
+    public void remove(T value){
+        DoublyNode<T> node = head; // assign head to node
+        // if value exist in linked list(use contains()):
         if (contains(value)) {
             while (node != null) {
                 if (node.value.equals(value)) {
-                    if (head == node && tail == node) {
+                    if (head == tail) {
                         head = null;
                         tail = null;
                     }
@@ -105,14 +104,36 @@ public class DoublyLinkedList<T> implements Iterable<T>{
                         node.previous = null;
                     }
                 }
-                count--;
                 node = node.next;
             }
         }
         else {
-            System.out.println("Node doesn't exist!");
+            throw new IllegalStateException("Node doesn't exist!");
         }
     }
+    // remove head node
+    public void removeHead() {
+        if (head.next != null) {
+            head.next.previous = null;
+            head = head.next;
+        }
+        else {
+            head = null;
+            tail = null;
+        }
+    }
+    // remove tail node
+    public void removeTail() {
+        if (tail.previous != null) {
+            tail.previous.next = null;
+            tail = tail.previous;
+        }
+        else {
+            tail = null;
+            head = null;
+        }
+    }
+    // return value in order from head to tail
     public void returnValueHeadToTail() {
         DoublyNode<T> current = head;
         while (current != null) {
@@ -120,7 +141,7 @@ public class DoublyLinkedList<T> implements Iterable<T>{
             current = current.next;
         }
     }
-
+    // return value in order from tail to head
     public void returnValueTailToHead() {
         DoublyNode<T> current = tail;
         while (current != null) {
@@ -129,7 +150,7 @@ public class DoublyLinkedList<T> implements Iterable<T>{
         }
     }
 
-    // find value and return node that holds value
+    // find value and return node that holds value, if not found, return null
     public DoublyNode<T> find(T value) {
         DoublyNode<T> counter = head;
         while(counter != null) {
@@ -140,7 +161,7 @@ public class DoublyLinkedList<T> implements Iterable<T>{
         }
     return null;
     }
-    // return true / false if the value is in the list
+    // return true / false if the there's a node that contains the value. Use find() method
     public boolean contains(T value) {
         return find(value) != null;
     }

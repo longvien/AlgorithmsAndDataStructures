@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65b5b761-bdfa-48a0-b3ac-51dce244419a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mainProgramme/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mainProgramme/LinkedList/DoublyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mainProgramme/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mainProgramme/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mainProgramme/SortedLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mainProgramme/LinkedList/SortedLinkedList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +65,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build LinkedList.executor": "Run",
     "Gradle.DataStructures [:org.mainProgramme.Main.main()].executor": "Run",
     "Gradle.LinkedList [:org.mainProgramme.Main.main()].executor": "Run",
     "Gradle.NodeImplementationAndNodeChaining [:org.mainProgramme.Main.main()].executor": "Run",
@@ -72,10 +77,26 @@
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/qvien/lvien/DataStructuresAndAlgorithms/LinkedList",
-    "onboarding.tips.debug.path": "/Users/qvien/lvien/DataStructuresAndAlgorithms/NodeImplementationAndNodeChaining/src/main/java/org/example/Main.java"
+    "onboarding.tips.debug.path": "/Users/qvien/lvien/DataStructuresAndAlgorithms/NodeImplementationAndNodeChaining/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.mainProgramme.Main" />
+      <module name="NodeImplementationAndNodeChaining.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mainProgramme.Queue.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="LinkedList" />
       <method v="2">
@@ -123,6 +144,11 @@
       <option name="RUN_TOOL" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -140,5 +166,16 @@
       <updated>1769623012137</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
