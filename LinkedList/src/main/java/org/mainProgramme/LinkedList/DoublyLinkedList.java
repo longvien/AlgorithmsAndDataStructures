@@ -161,6 +161,7 @@ public class DoublyLinkedList<T> implements Iterable<T>{
         }
     return null;
     }
+
     // return true / false if the there's a node that contains the value. Use find() method
     public boolean contains(T value) {
         return find(value) != null;
