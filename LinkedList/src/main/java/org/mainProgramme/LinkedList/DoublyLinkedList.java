@@ -49,7 +49,6 @@ public class DoublyLinkedList<T> implements Iterable<T>{
     // add node to head
     public void addHead(T value) {
         DoublyNode<T> newNode = new DoublyNode<>(value);
-
         if (head != null) {
             head.previous = newNode;  // lastNode.previous = newNode;
             newNode.next = head; // newNode.next = lastNode;
