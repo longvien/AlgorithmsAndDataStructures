@@ -8,5 +8,4 @@ public class BTreeNode<T> {
     public BTreeNode(T value) {
         this.value = value;
     }
-
 }
