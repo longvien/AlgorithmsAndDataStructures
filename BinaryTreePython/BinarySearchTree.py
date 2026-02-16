@@ -20,6 +20,15 @@ class BinarySearchTree:
             action(node.value)
             self._inOrderTraversal(action, node.right)
 
+    #postOrderTraversal
+    def postOrderTraversal(self, action):
+        self._postOrderTraversal(action, self.root)
+    def _postOrderTraversal(self, action, node):
+        if node != None:
+            self._postOrderTraversal(action, node.left)
+            self._postOrderTraversal(action, node.right)
+            action(node.value)
+
 
     def addNode(self, value):
         newNode = BinaryNode(value)
