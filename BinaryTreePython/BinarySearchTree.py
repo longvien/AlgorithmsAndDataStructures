@@ -62,3 +62,5 @@ class BinarySearchTree:
     #                     self.current.right.right = newNode
     #                 elif self.current.value < newNode.value and self.current.right is not None and self.current.right.value > newNode.value:
     #                     self.current.right.left = newNode
+
+
