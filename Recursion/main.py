@@ -12,4 +12,5 @@ def _factorial(n):
     return n * _factorial(n - 1)
 
 a = _factorial(5)
+
 print(a)
