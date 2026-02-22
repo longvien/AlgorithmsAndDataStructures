@@ -4,28 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2748f5a-0c80-4911-a8a4-ca29fcfdbe9a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../BinaryTrees/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BinaryTrees/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="fde0d5e9-c2ec-43b7-bc34-0f9f5c65ad43" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BinaryTreePythonVersion/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="6" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="McpProjectServerCommands">
-    <commands />
-    <urls />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="39iKnio1efqfioYXKLI8oLfrrVY" />
+  <component name="ProjectId" id="3A2iBZChndeTWWuhtxJ3vwcRwyP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -33,15 +28,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
+    "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "master",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/qvien/lvien/DataStructuresAndAlgorithms/BinaryTreePythonVersion",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +46,32 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Recursion" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -61,12 +82,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a2748f5a-0c80-4911-a8a4-ca29fcfdbe9a" name="Changes" comment="" />
-      <created>1771173624169</created>
+      <changelist id="fde0d5e9-c2ec-43b7-bc34-0f9f5c65ad43" name="Changes" comment="" />
+      <created>1771796930894</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1771173624169</updated>
-      <workItem from="1771173664222" duration="509000" />
+      <updated>1771796930894</updated>
+      <workItem from="1771796931968" duration="53000" />
+      <workItem from="1771797019052" duration="37000" />
+      <workItem from="1771797060355" duration="506000" />
     </task>
     <servers />
   </component>
