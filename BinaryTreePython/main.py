@@ -15,6 +15,7 @@ BST = BinarySearchTree()
 BST.root = BinaryNode(5)
 BST.root.left = BinaryNode(4)
 BST.root.right = BinaryNode(6)
+print(BST.search(4))
 BST.preOrderTraversal(print) # current -> left -> right | Pre-order Traversal
 BST.inOrderTraversal(print) # left -> current -> right | In-order Traversal (Sorted)
 BST.postOrderTraversal(print) # left -> right -> current | Post-order Traversal (Sorted)
