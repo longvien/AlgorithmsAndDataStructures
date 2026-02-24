@@ -34,7 +34,10 @@ class BinarySearchTree:
     def search(self, value):
         return self._search(self.root, value)
     def _search(self, node, value):
-        if node == None:
+        if node is not None:
+            print('Visiting: ', node.value)
+        else:
+            print("Value doesn't exist!")
             return None
         if node.value == value:
             return node
