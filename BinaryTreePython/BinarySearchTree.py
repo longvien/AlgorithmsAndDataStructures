@@ -45,23 +45,3 @@ class BinarySearchTree:
             return self._search(node.left, value)
         else:
             return self._search(node.right, value)
-
-    # #addNode
-    # def addNode(self, value : object):
-    #     newNode = BinaryNode(value)
-    #
-    #     if self.root == None:
-    #         self.root = newNode
-    #         self.current = newNode
-    #
-    #     elif self.current.value > newNode.value:
-    #         if self.current.left == None and newNode.value < self.current.value:
-    #             self.current.left = newNode
-    #             self.current = self.current.left
-    #         else:
-    #             while self.current.left is not None and newNode.value < self.current.value:
-    #                 self.current = self.current.left
-    #                 if self.current.value < newNode.value and self.current.right is not None and self.current.right.value < newNode.value:
-    #                     self.current.right.right = newNode
-    #                 elif self.current.value < newNode.value and self.current.right is not None and self.current.right.value > newNode.value:
-    #                     self.current.right.left = newNode
