@@ -21,6 +21,7 @@ BST.root.left.right.right = BinaryNode(7)
 BST.root.right = BinaryNode(10)
 BST.root.right.right = BinaryNode(14)
 BST.search(4)
-# BST.preOrderTraversal(print) # current -> left -> right | Pre-order Traversal
-# BST.inOrderTraversal(print) # left -> current -> right | In-order Traversal (Sorted)
-# BST.postOrderTraversal(print) # left -> right -> current | Post-order Traversal (Sorted)
+
+BST.preOrderTraversal(print) # current -> left -> right | Pre-order Traversal
+BST.inOrderTraversal(print) # left -> current -> right | In-order Traversal (Sorted)
+BST.postOrderTraversal(print) # left -> right -> current | Post-order Traversal (Sorted)
