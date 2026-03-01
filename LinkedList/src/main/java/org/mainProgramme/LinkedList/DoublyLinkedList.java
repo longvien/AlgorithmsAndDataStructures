@@ -102,6 +102,7 @@ public class DoublyLinkedList<T> implements Iterable<T>{
                         node.next = null;
                         node.previous = null;
                     }
+                    break;
                 }
                 node = node.next;
             }
