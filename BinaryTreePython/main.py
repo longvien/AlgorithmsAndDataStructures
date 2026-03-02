@@ -25,4 +25,3 @@ BST.search(4)
 BST.preOrderTraversal(print) # current -> left -> right | Pre-order Traversal
 BST.inOrderTraversal(print) # left -> current -> right | In-order Traversal (Sorted)
 BST.postOrderTraversal(print) # left -> right -> current | Post-order Traversal (Sorted)
-
