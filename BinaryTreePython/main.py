@@ -7,7 +7,6 @@ node3 = BinaryNode("right")
 node1.left = node2
 node1.right = node3
 
-
 BST = BinarySearchTree()
 # BST.addNode(10)
 # BST.addNode(5)
