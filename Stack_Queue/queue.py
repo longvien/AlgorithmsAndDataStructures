@@ -21,6 +21,9 @@ class Queue:
             current.next = None
         else:
             self.tail = None
+            return None
 
     def peek(self):
+        if self.head is None:
+            return None
         return self.head.value
