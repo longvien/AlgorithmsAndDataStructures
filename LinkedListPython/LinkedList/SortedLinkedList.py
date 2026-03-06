@@ -3,6 +3,7 @@ class sortedLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+
     def add(self, value):
         newNode = sortedNode(value)
         current = self.head

@@ -62,7 +62,6 @@ class DoublyLinkedList(Iterable):
                         node.next = None
                         node.previous = None
                     break
-                node = node.next
         else:
             raise Exception("Node doesn't exist")
 
