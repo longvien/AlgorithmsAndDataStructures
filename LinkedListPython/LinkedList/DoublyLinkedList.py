@@ -62,6 +62,7 @@ class DoublyLinkedList(Iterable):
                         node.next = None
                         node.previous = None
                     break
+                node = node.next
         else:
             raise Exception("Node doesn't exist")
 
@@ -83,7 +84,7 @@ class DoublyLinkedList(Iterable):
 
     def returnValueHeadToTail(self):
         current = self.head
-        while current is not None:
+        while current != None:
             print(current.value)
             current = current.next
 

@@ -1,4 +1,4 @@
-from queueNode import QueueNode
+from Node.queueNode import QueueNode
 
 class Queue:
     def __init__(self):

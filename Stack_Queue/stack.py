@@ -1,4 +1,4 @@
-from stackNode import StackNode
+from Node.stackNode import StackNode
 
 class Stack:
     def __init__(self):
