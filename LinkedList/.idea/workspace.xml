@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65b5b761-bdfa-48a0-b3ac-51dce244419a" name="Changes" comment="" />
+    <list default="true" id="65b5b761-bdfa-48a0-b3ac-51dce244419a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stack_Queue/stack.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Stack_Queue/stack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Stack_Queue/stackNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Stack_Queue/stackNode.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
