@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fde0d5e9-c2ec-43b7-bc34-0f9f5c65ad43" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Recursion.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedListPython/LinkedList/DoublyLinkedList.py" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedListPython/LinkedList/DoublyLinkedList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedListPython/LinkedList/SortedLinkedList.py" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedListPython/LinkedList/SortedLinkedList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/sumOfList.py" afterDir="false" />
-    </list>
+    <list default="true" id="fde0d5e9-c2ec-43b7-bc34-0f9f5c65ad43" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +38,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.factorial.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.sumOfList.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",

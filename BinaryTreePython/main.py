@@ -8,9 +8,7 @@ node1.left = node2
 node1.right = node3
 
 BST = BinarySearchTree()
-# BST.addNode(10)
-# BST.addNode(5)
-# BST.addNode(8)
+
 BST.root = BinaryNode(8)
 BST.root.left = BinaryNode(3)
 BST.root.left.left  = BinaryNode(1)

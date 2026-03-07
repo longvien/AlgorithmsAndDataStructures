@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65b5b761-bdfa-48a0-b3ac-51dce244419a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../LinkedListPython/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedListPython/LinkedList/DoublyLinkedList.py" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedListPython/LinkedList/DoublyLinkedList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedListPython/LinkedList/SortedLinkedList.py" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedListPython/LinkedList/SortedLinkedList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedListPython/Node/SinglyNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedListPython/Node/SinglyNode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedListPython/Node/SortedNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedListPython/Node/SortedNode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedListPython/Queue/Deque.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedListPython/Queue/Queue.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedListPython/Queue/Stack.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LinkedListPython/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../LinkedListPython/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack_Queue/queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Stack_Queue/queue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack_Queue/queueNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Stack_Queue/Node/queueNode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack_Queue/stack.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Stack_Queue/stack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Stack_Queue/stackNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Stack_Queue/Node/stackNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursion/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursion/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
