@@ -10,14 +10,7 @@ node1.right = node3
 BST = BinarySearchTree()
 
 BST.root = BinaryNode(8)
-BST.root.left = BinaryNode(3)
-BST.root.left.left  = BinaryNode(1)
-BST.root.left.right = BinaryNode(6)
-BST.root.left.right.left = BinaryNode(4)
-BST.root.left.right.right = BinaryNode(7)
-BST.root.right = BinaryNode(10)
-BST.root.right.right = BinaryNode(14)
-BST.search(4)
+BST.add(5)
 
 BST.preOrderTraversal(print) # current -> left -> right | Pre-order Traversal
 BST.inOrderTraversal(print) # left -> current -> right | In-order Traversal (Sorted)

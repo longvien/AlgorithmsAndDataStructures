@@ -46,4 +46,12 @@ class BinarySearchTree:
             return self._search(node.right, value)
 
     def add(self, value):
+        self._add(value, self.root)
+    def _add(self, value, node):
         newNode = BinaryNode(value)
+        if node is None:
+            node = newNode
+        if node.value > newNode.value:
+            return self._add(node.left, value)
+        else:
+            return self._add(node.right, value)
