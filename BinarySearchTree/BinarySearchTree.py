@@ -64,3 +64,33 @@ class BinarySearchTree:
             self._add(value, node.left)
         elif node.value < value:
             self._add(value, node.right)
+    def getLeftMostNode(self, node):
+        if node.left is None:
+            return node
+        self.getLeftMostNode(node.left)
+
+    def remove(self, value):
+        self._remove(self.root, value)
+    def _remove(self, node, value):
+        if self.root == value:
+            self.root = self.getLeftMostNode(node.right)
+        elif node.left.value == value:
+            if node.left.left is None and node.left.right is None:
+                node.left = None
+            elif node.left.left is not None and node.left.right is None:
+                node.left = node.left.left
+            elif node.left.right is not None and node.left.left is None:
+                node.left = node.left.right
+            elif node.left.left is not None and node.left.right is not None:
+                node.left = self.getLeftMostNode(node.left.right)
+        elif node.right.value == value:
+            if node.right.left is None and node.right.right is None:
+                node.right = None
+            elif node.right.right is not None and node.right.left is None:
+                node.right = node.right.right
+            elif node.right.left is not None and node.right.right is not None:
+                node.right = self.getLeftMostNode(node.right.right)
+        elif node.value < value:
+            self._remove(node.right, value)
+        elif node.value > value:
+            self._remove(node.left, value)

@@ -13,6 +13,8 @@ BST.add(5)
 BST.add(4)
 BST.add(1)
 BST.add(1.5)
-BST.preOrderTraversal(print) # current -> left -> right | Pre-order Traversal
+BST.remove(5)
+BST.remove(2)
+#BST.preOrderTraversal(print) # current -> left -> right | Pre-order Traversal
 BST.inOrderTraversal(print) # left -> current -> right | In-order Traversal (Sorted)
-BST.postOrderTraversal(print) # left -> right -> current | Post-order Traversal
+#BST.postOrderTraversal(print) # left -> right -> current | Post-order Traversal
