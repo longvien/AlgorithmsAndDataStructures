@@ -9,3 +9,5 @@ class Stack:
         return top
     def isEmpty(self) -> bool:
         return len(self.stack) < 1
+    def peek(self):
+        return self.stack[len(self.stack) - 1]
