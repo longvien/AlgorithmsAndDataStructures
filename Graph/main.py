@@ -5,4 +5,5 @@ myGraph.addEdge('A', 'B')
 myGraph.addEdge('A', 'C')
 myGraph.addEdge('B', 'D')
 myGraph.addEdge('D', 'C')
-print(myGraph.DFSInteractive())
+for i in myGraph.DFSInteractive():
+    print(i)
