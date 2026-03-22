@@ -23,7 +23,8 @@ class GraphClass:
         self.visited = set()
         if self.adj:
             for i in self.adj:
-                self._DFSRecursive(i)
+                if i not in self.visited:
+                    self._DFSRecursive(i)
         return self.visited
     def _DFSRecursive(self, node):
         if node in self.visited:
@@ -32,37 +33,46 @@ class GraphClass:
         for i in self.adj[node]:
             self._DFSRecursive(i)
 
-    def DFSInteractive(self):
-        self.visited = set()
+    def DFSInterative(self):
         self.stack.stack = []
-        if self.adj:
-            for node in self.adj:
-                if node not in self.visited :
-                    self.stack.push(node)
-                    while not self.stack.isEmpty():
-                        current = self.stack.pop()
-                        self.visited.add(current)
-                        for i in self.adj[current]:
-                            if i not in self.visited:
-                                self.stack.push(i)
+        self.visited = set()
+        for i in self.adj:
+            if i not in self.visited:
+                self.stack.push(i)
+                while not self.stack.isEmpty():
+                    node = self.stack.pop()
+                    self.visited.add(node)
+                    for current in self.adj[node]:
+                        if current not in self.visited:
+                            self.stack.push(current)
         return self.visited
 
     def BFS(self):
+        self.queue.queue = []
         self.visited = set()
-        self.queue.queue = deque()
-        if self.adj:
-            for i in self.adj:
-                if i not in self.visited:
-                    self.queue.enqueue(i)
-                    while not self.queue.isEmpty():
-                        current = self.queue.dequeue()
-                        self.visited.add(current)
-                        for items in self.adj[current]:
-                            if items not in self.visited:
-                                self.queue.enqueue(items)
+        for i in self.adj:
+            if i not in self.visited:
+                self.queue.enqueue(i)
+                while not self.queue.isEmpty():
+                    current = self.queue.dequeue()
+                    self.visited.add(current)
+                    for n in self.adj[current]:
+                        if n not in self.visited:
+                            self.queue.enqueue(n)
         return self.visited
 
-
-
-
-
+    def componentsCounter(self) -> int:
+        count = 0
+        self.stack.stack = []
+        self.visited = set()
+        for i in self.adj:
+            if i not in self.visited:
+                count+=1
+                self.stack.push(i)
+                while not self.stack.isEmpty():
+                    a = self.stack.pop()
+                    self.visited.add(a)
+                    for n in self.adj[a]:
+                        if n not in self.visited:
+                            self.stack.push(n)
+        return count
