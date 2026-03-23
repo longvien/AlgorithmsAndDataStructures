@@ -24,16 +24,18 @@ class GraphClass:
         if self.adj:
             for i in self.adj:
                 if i not in self.visited:
-                    self._DFSRecursive(i)
+                    self._DFSRecursive(i, None)
         return self.visited
-    def _DFSRecursive(self, node):
-        if node in self.visited:
-            return
+    def _DFSRecursive(self, node, parent):
         self.visited.add(node)
-        for i in self.adj[node]:
-            self._DFSRecursive(i)
+        for neighbor in self.adj[node]:
+            if neighbor not in self.visited:
+                self._DFSRecursive(neighbor, node)
+            elif neighbor in self.visited and neighbor != parent:
+                print('Cycle')
 
     def DFSInterative(self):
+        parent = None
         self.stack.stack = []
         self.visited = set()
         for i in self.adj:
@@ -42,6 +44,7 @@ class GraphClass:
                 while not self.stack.isEmpty():
                     node = self.stack.pop()
                     self.visited.add(node)
+                    parent = node
                     for current in self.adj[node]:
                         if current not in self.visited:
                             self.stack.push(current)

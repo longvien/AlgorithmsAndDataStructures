@@ -4,11 +4,10 @@ myGraph = GraphClass()
 myGraph.addEdge('A', 'B')
 myGraph.addEdge('A', 'C')
 myGraph.addEdge('B', 'D')
-myGraph.addEdge('D', 'C')
+myGraph.addEdge('D', 'F')
 myGraph.addEdge('F', 'E')
 print('DFS Interactive')
-for i in myGraph.DFSInterative():
-    print(i)
+print(myGraph.DFSRecursive())
 print('Connected Components Counter Graph')
 print(myGraph.componentsCounter())
 
