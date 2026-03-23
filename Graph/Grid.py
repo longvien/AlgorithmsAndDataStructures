@@ -3,10 +3,25 @@ grid = [[1, 0, 1],
         [1, 1, 1]
         ]
 
+gridADJ = {
+    (0,0): [(0,1)],
+    (0,1): [(0,0), (1,1)],
+    (1,1): [(0,1)],
+    (2,0): [],
+    (2,2): []
+}
+
 visited = set()
-def componentCounterGrid(self):
+def componentCounterGrid():
     counter = 0
-    row = len(
+    rows = len(grid)
+    cols = len(grid[0])
+    for r in range(rows):
+        for c in range(cols):
+            if grid[r][c] == 1 and (r, c) not in visited:
+                counter += 1
+                DFSGrid(r, c)
+    return counter
 
 
 def DFSGrid(r, c):
@@ -26,12 +41,5 @@ def DFSGrid(r, c):
         DFSGrid(r, c - 1)
     return visited
 
+print(componentCounterGrid())
 
-
-gridADJ = {
-    (0,0): [(0,1)],
-    (0,1): [(0,0), (1,1)],
-    (1,1): [(0,1)],
-    (2,0): [],
-    (2,2): []
-}
