@@ -7,6 +7,7 @@ class GraphClass:
         self.visited = set() # O(1) check, output order randomly
         self.stack = Stack()
         self.queue = Queue()
+        self.cycleFound = False
         #self.visited = [] O(n) check, inorder output
 
     def addEdge(self, a, b):
@@ -19,20 +20,26 @@ class GraphClass:
     def returnGraph(self):
         return self.adj
 
+
     def DFSRecursive(self):
         self.visited = set()
         if self.adj:
             for i in self.adj:
                 if i not in self.visited:
+                    self.cycleFound = False
                     self._DFSRecursive(i, None)
+                if self.cycleFound:
+                    print("Cycle")
         return self.visited
+
     def _DFSRecursive(self, node, parent):
         self.visited.add(node)
         for neighbor in self.adj[node]:
             if neighbor not in self.visited:
                 self._DFSRecursive(neighbor, node)
-            elif neighbor in self.visited and neighbor != parent:
-                print('Cycle')
+            elif neighbor != parent:
+                self.cycleFound = True
+                return
 
     def DFSInterative(self):
         parent = None
@@ -79,3 +86,5 @@ class GraphClass:
                         if n not in self.visited:
                             self.stack.push(n)
         return count
+
+
