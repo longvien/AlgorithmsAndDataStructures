@@ -1,15 +1,10 @@
-from Stack import Stack
-from Queue import Queue
-from collections import deque
 class GraphClass:
     def __init__(self):
         self.adj = {}
-        self.visited = set() # O(1) check, output order randomly
-        self.stack = Stack()
-        self.queue = Queue()
-        self.cycleFound = False
-        #self.visited = [] O(n) check, inorder output
-
+        self.visited = []
+        self.stack = []
+        self.queue = []
+        self.cycleDetected = False
     def addEdge(self, a, b):
         if a not in self.adj:
             self.adj[a] = []
@@ -19,72 +14,90 @@ class GraphClass:
         self.adj[b].append(a)
     def returnGraph(self):
         return self.adj
-
-
-    def DFSRecursive(self):
-        self.visited = set()
+    def DFSR(self):
+        self.cycleDetected = False
+        self.visited = []
         if self.adj:
             for i in self.adj:
                 if i not in self.visited:
-                    self.cycleFound = False
-                    self._DFSRecursive(i, None)
-                if self.cycleFound:
-                    print("Cycle")
+                    self._DFSR(i, None)
         return self.visited
-
-    def _DFSRecursive(self, node, parent):
-        self.visited.add(node)
-        for neighbor in self.adj[node]:
-            if neighbor not in self.visited:
-                self._DFSRecursive(neighbor, node)
-            elif neighbor != parent:
-                self.cycleFound = True
+    def _DFSR(self, n, parent):
+        if self.cycleDetected:
+            return
+        if n in self.visited:
+            return
+        self.visited.append(n)
+        for i in self.adj[n]:
+            if self.cycleDetected:
+                return
+            if i not in self.visited:
+                self._DFSR(i, n)
+            elif i in self.visited and  i != parent:
+                print("Cycle")
+                self.cycleDetected = True
                 return
 
-    def DFSInterative(self):
-        parent = None
-        self.stack.stack = []
-        self.visited = set()
-        for i in self.adj:
-            if i not in self.visited:
-                self.stack.push(i)
-                while not self.stack.isEmpty():
-                    node = self.stack.pop()
-                    self.visited.add(node)
-                    parent = node
-                    for current in self.adj[node]:
-                        if current not in self.visited:
-                            self.stack.push(current)
+    def DFSI(self):
+        self.cycleDetected = False
+        self.visited = []
+        self.stack = []
+        if self.adj:
+            for i in self.adj:
+                if i not in self.visited:
+                    self.stack.append((i, None))
+                    while not self.isEmptyArr(self.stack):
+                        a, parent = self.stack[len(self.stack) - 1]
+                        del self.stack[len(self.stack) - 1]
+                        self.visited.append(a)
+                        for n in self.adj[a]:
+                            if n not in self.visited and n not in [x[0] for x in self.stack]:
+                                self.stack.append((n, a))
+                            elif n in self.visited and n != parent and self.isEmptyArr(self.stack):
+                                print("Cycle")
+                                self.cycleDetected = True
+                                return self.visited
         return self.visited
 
     def BFS(self):
-        self.queue.queue = []
-        self.visited = set()
-        for i in self.adj:
-            if i not in self.visited:
-                self.queue.enqueue(i)
-                while not self.queue.isEmpty():
-                    current = self.queue.dequeue()
-                    self.visited.add(current)
-                    for n in self.adj[current]:
-                        if n not in self.visited:
-                            self.queue.enqueue(n)
+        self.cycleDetected = False
+        self.visited = []
+        self.queue = []
+        if self.adj:
+            for i in self.adj:
+                if i not in self.visited:
+                    self.queue.append((i, None))
+                    while not self.isEmptyArr(self.queue):
+                        a, parent = self.queue[0]
+                        del self.queue[0]
+                        self.visited.append(a)
+                        for n in self.adj[a]:
+                            if n not in self.visited and n not in [e[0] for e in self.queue]:
+                                self.queue.append((n, a))
+                            elif n in self.visited and n != parent and self.isEmptyArr(self.queue):
+                                print("Cycle")
+                                self.cycleDetected = True
+                                return self.visited
         return self.visited
+
+    def isEmptyArr(self, arr) -> bool:
+        return len(arr) < 1
 
     def componentsCounter(self) -> int:
         count = 0
-        self.stack.stack = []
-        self.visited = set()
+        self.stack = []
+        self.visited = []
         for i in self.adj:
             if i not in self.visited:
                 count+=1
-                self.stack.push(i)
-                while not self.stack.isEmpty():
-                    a = self.stack.pop()
-                    self.visited.add(a)
+                self.stack.append(i)
+                while not self.isEmptyArr(self.stack):
+                    a = self.stack[len(self.stack) - 1]
+                    del self.stack[len(self.stack) - 1]
+                    self.visited.append(a)
                     for n in self.adj[a]:
                         if n not in self.visited:
-                            self.stack.push(n)
+                            self.stack.append(n)
         return count
 
 

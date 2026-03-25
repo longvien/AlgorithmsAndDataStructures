@@ -7,7 +7,7 @@ myGraph.addEdge('B', 'D')
 myGraph.addEdge('D', 'C')
 myGraph.addEdge('F', 'E')
 print('DFS Interactive')
-print(myGraph.DFSRecursive())
+print(myGraph.DFSR())
 print('Connected Components Counter Graph')
 print(myGraph.componentsCounter())
 
