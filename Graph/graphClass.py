@@ -5,13 +5,14 @@ class GraphClass:
         self.stack = []
         self.queue = []
         self.cycleDetected = False
-    def addEdge(self, a, b):
+    def addUndirectedEdge(self, a, b):
         if a not in self.adj:
             self.adj[a] = []
         if b not in self.adj:
             self.adj[b] = []
         self.adj[a].append(b)
         self.adj[b].append(a)
+
     def returnGraph(self):
         return self.adj
     def DFSR(self):
@@ -33,7 +34,7 @@ class GraphClass:
                 return
             if i not in self.visited:
                 self._DFSR(i, n)
-            elif i in self.visited and  i != parent:
+            elif i in self.visited and i != parent:
                 print("Cycle")
                 self.cycleDetected = True
                 return

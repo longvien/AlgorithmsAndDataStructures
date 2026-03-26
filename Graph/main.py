@@ -1,11 +1,11 @@
 from graphClass import GraphClass
 from Grid import Grid
 myGraph = GraphClass()
-myGraph.addEdge('A', 'B')
-myGraph.addEdge('A', 'C')
-myGraph.addEdge('B', 'D')
-myGraph.addEdge('D', 'C')
-myGraph.addEdge('F', 'E')
+myGraph.addUndirectedEdge('A', 'B')
+myGraph.addUndirectedEdge('A', 'C')
+myGraph.addUndirectedEdge('B', 'D')
+myGraph.addUndirectedEdge('D', 'C')
+myGraph.addUndirectedEdge('F', 'E')
 print('DFS Interactive')
 print(myGraph.DFSR())
 print('Connected Components Counter Graph')
