@@ -1,5 +1,6 @@
 from graphClass import GraphClass
 from Grid import Grid
+from graphDirectedClass import graphDirected
 myGraph = GraphClass()
 myGraph.addUndirectedEdge('A', 'B')
 myGraph.addUndirectedEdge('A', 'C')
@@ -28,3 +29,15 @@ gridADJ = {
 myGrid = Grid()
 print('Connected Components Counter Grid')
 print(myGrid.componentCounterGrid(grid))
+
+
+#directedGraphCycleDetection
+directed = graphDirected()
+
+directed.addDirectedEdge('a', 'b')
+directed.addDirectedEdge('b', 'c')
+directed.addDirectedEdge('c', 'a')
+directed.addDirectedEdge('f', 'e')
+
+print("Directed Graph Cycle Detection")
+print(directed.DFSR())
