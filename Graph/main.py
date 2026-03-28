@@ -1,13 +1,13 @@
-from graphClass import GraphClass
+from graphClass import unDirectedGraph
 from Grid import Grid
-from graphDirectedClass import graphDirected
-myGraph = GraphClass()
+from graphDirectedClass import directedGraph
+myGraph = unDirectedGraph()
 myGraph.addUndirectedEdge('A', 'B')
 myGraph.addUndirectedEdge('A', 'C')
 myGraph.addUndirectedEdge('B', 'D')
 myGraph.addUndirectedEdge('D', 'C')
 myGraph.addUndirectedEdge('F', 'E')
-print('DFS Interactive')
+print('DFS Recursive')
 print(myGraph.DFSR())
 print('Connected Components Counter Graph')
 print(myGraph.componentsCounter())
@@ -32,12 +32,13 @@ print(myGrid.componentCounterGrid(grid))
 
 
 #directedGraphCycleDetection
-directed = graphDirected()
+directed = directedGraph()
 
 directed.addDirectedEdge('a', 'b')
-directed.addDirectedEdge('b', 'c')
-directed.addDirectedEdge('c', 'a')
-directed.addDirectedEdge('f', 'e')
+directed.addDirectedEdge('a', 'c')
+directed.addDirectedEdge('b', 'd')
+directed.addDirectedEdge('c', 'd')
+
 
 print("Directed Graph Cycle Detection")
-print(directed.DFSR())
+print(directed.topologicalSort())

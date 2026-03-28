@@ -1,4 +1,4 @@
-class GraphClass:
+class unDirectedGraph:
     def __init__(self):
         self.adj = {}
         self.visited = []
@@ -12,18 +12,65 @@ class GraphClass:
             self.adj[b] = []
         self.adj[a].append(b)
         self.adj[b].append(a)
-
     def returnGraph(self):
         return self.adj
+
     def DFSR(self):
+        self.visited = []
+        if self.adj:
+            for i in self.adj:
+                if i not in self.visited:
+                    self._DFSR(i)
+        return self.visited
+    def _DFSR(self, n) -> None:
+        if n in self.visited:
+            return
+        self.visited.append(n)
+        for i in self.adj[n]:
+            if i not in self.visited:
+                self._DFSR(i)
+
+    def DFS(self):
+        self.visited = []
+        self.stack = []
+        if self.adj:
+            for i in self.adj:
+                if i not in self.visited and i not in self.stack:
+                    self.stack.append(i)
+                while len(self.stack) > 0:
+                    a = self.stack[len(self.stack) - 1]
+                    del self.stack[len(self.stack) - 1]
+                    self.visited.append(a)
+                    for n in self.adj[a]:
+                        if n not in self.visited and n not in self.stack:
+                            self.stack.append(n)
+        return self.visited
+
+    def BFS(self):
+        self.visited = []
+        self.queue = []
+        if self.adj:
+            for i in self.adj:
+                if i not in self.visited and i not in self.queue:
+                    self.queue.append(i)
+                    while len(self.queue) > 0:
+                        a = self.queue[0]
+                        del self.queue[0]
+                        self.visited.append(a)
+                        for n in self.adj[a]:
+                            if n not in self.visited and n not in self.queue:
+                                self.queue.append(n)
+        return self.visited
+
+    def CycleDetectionDFSR(self):
         self.cycleDetected = False
         self.visited = []
         if self.adj:
             for i in self.adj:
                 if i not in self.visited:
-                    self._DFSR(i, None)
+                    self._CycleDetectionDFSR(i, None)
         return self.visited
-    def _DFSR(self, n, parent):
+    def _CycleDetectionDFSR(self, n, parent):
         if self.cycleDetected:
             return
         if n in self.visited:
@@ -33,13 +80,13 @@ class GraphClass:
             if self.cycleDetected:
                 return
             if i not in self.visited:
-                self._DFSR(i, n)
+                self._CycleDetectionDFSR(i, n)
             elif i in self.visited and i != parent:
                 print("Cycle")
                 self.cycleDetected = True
                 return
 
-    def DFSI(self):
+    def CycleDetectionDFSI(self):
         self.cycleDetected = False
         self.visited = []
         self.stack = []
@@ -100,5 +147,3 @@ class GraphClass:
                         if n not in self.visited:
                             self.stack.append(n)
         return count
-
-
