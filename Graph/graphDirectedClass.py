@@ -3,6 +3,7 @@ class graphDirected:
         self.adj = {}
         self.visited = []
         self.recStack = []
+        self.stack = []
         self.cycleFound = False
     def addDirectedEdge(self, a, b):
         if a not in self.adj:
@@ -36,7 +37,41 @@ class graphDirected:
                     self.cycleFound = True
                     return
         else:
+            while len(self.recStack) > 0:
+                a = self.recStack[len(self.recStack) - 1]
+                self.visited.append(a)
+                del self.recStack[len(self.recStack) - 1]
             return
 
+
+    def DFS(self):
+        self.visited = []
+        self.stack = []
+        self.recStack = []
+        self.cycleFound = False
+        if self.adj:
+            for i in self.adj:
+                if i not in self.recStack and i not in self.visited:
+                    self.stack.append(i)
+                    while len(self.stack) > 0:
+                        a = self.stack[len(self.stack) - 1]
+                        del self.stack[len(self.stack) -1]
+                        self.recStack.append(a)
+                        if self.adj[a]:
+                            for n in self.adj[a]:
+                                if n not in self.recStack:
+                                    self.stack.append(n)
+                                else:
+                                    print("Cycle")
+                                    while len(self.recStack) > 0:
+                                        b = self.recStack[len(self.recStack) - 1]
+                                        del self.recStack[len(self.recStack) - 1]
+                                        self.visited.append(b)
+                        else:
+                            while len(self.recStack) > 0:
+                                b = self.recStack[len(self.recStack) - 1]
+                                del self.recStack[len(self.recStack) - 1]
+                                self.visited.append(b)
+            return self.visited
 
 
