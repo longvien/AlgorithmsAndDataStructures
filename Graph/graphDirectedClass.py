@@ -136,9 +136,3 @@ class directedGraph:
                 self._topologicalSort(i)
         self.topo.append(node)
         self.recStack.remove(node)
-
-
-
-
-
-
