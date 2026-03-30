@@ -13,9 +13,9 @@ print('Connected Components Counter Graph')
 print(myGraph.componentsCounter())
 
 #examoleGrid
-grid = [[1, 0, 1],
+grid = [[0, 0, 0],
         [0, 1, 0],
-        [1, 1, 1]
+        [0, 0, 0]
         ]
 #exampleGridInADJ
 gridADJ = {
@@ -27,8 +27,8 @@ gridADJ = {
 }
 
 myGrid = Grid()
-print('Connected Components Counter Grid')
-print(myGrid.componentCounterGrid(grid))
+print('BFS Grid')
+print(myGrid.BFS(0, 0, grid, 2, 2))
 
 
 #directedGraphCycleDetection
