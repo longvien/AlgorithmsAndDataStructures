@@ -34,11 +34,17 @@ print(myGrid.componentCounterGrid(grid))
 #directedGraphCycleDetection
 directed = directedGraph()
 
-directed.addDirectedEdge('a', 'b')
+directed.addDirectedEdge('b', 'c')
 directed.addDirectedEdge('a', 'c')
+
 directed.addDirectedEdge('b', 'd')
-directed.addDirectedEdge('c', 'd')
+directed.addDirectedEdge('c', 'e')
+directed.addDirectedEdge('d', 'e')
 
-
-print("Directed Graph Cycle Detection")
+print("Directed Graph Topological Sort")
 print(directed.topologicalSort())
+
+# Kahn's Algorithm
+
+print("Kahn's Algorithm")
+print(directed.kahnAlgorithm())

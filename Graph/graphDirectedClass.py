@@ -2,9 +2,11 @@ class directedGraph:
     def __init__(self):
         self.adj = {}
         self.visited = []
+        self.queue = []
         self.recStack = []
         self.stack = []
         self.topo = []
+        self.indegree = {}
         self.cycleFound = False
 
     def addDirectedEdge(self, a, b):
@@ -136,3 +138,26 @@ class directedGraph:
                 self._topologicalSort(i)
         self.topo.append(node)
         self.recStack.remove(node)
+
+    def kahnAlgorithm(self):
+        self.topo = []
+        self.queue = []
+        if self.adj and self.CycleDetectionDFSR() is False:
+            for n in self.adj:
+                self.indegree[n] = 0
+            for i in self.adj:
+                for neighbor in self.adj[i]:
+                    self.indegree[neighbor] += 1
+            for a in self.indegree:
+                if self.indegree[a] == 0:
+                    self.queue.append(a)
+            while len(self.queue) > 0:
+                b = self.queue.pop(0)
+                self.topo.append(b)
+                for d in self.adj[b]:
+                    self.indegree[d] -= 1
+                    if self.indegree[d] == 0:
+                        self.queue.append(d)
+            return self.topo
+        else:
+            raise Exception("Cycle detected! Kahn's Algorithm Sort Impossible")
