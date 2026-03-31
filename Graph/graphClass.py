@@ -1,9 +1,11 @@
+from collections import deque
 class unDirectedGraph:
     def __init__(self):
         self.adj = {}
         self.visited = []
+        self.visitedSet = set()
         self.stack = []
-        self.queue = []
+        self.queue = deque()
         self.cycleDetected = False
     def addUndirectedEdge(self, a, b):
         if a not in self.adj:
@@ -17,48 +19,52 @@ class unDirectedGraph:
 
     def DFSR(self):
         self.visited = []
+        self.visitedSet = set()
         if self.adj:
             for i in self.adj:
-                if i not in self.visited:
+                if i not in self.visitedSet:
                     self._DFSR(i)
         return self.visited
     def _DFSR(self, n) -> None:
-        if n in self.visited:
+        if n in self.visitedSet:
             return
         self.visited.append(n)
+        self.visitedSet.add(n)
         for i in self.adj[n]:
-            if i not in self.visited:
+            if i not in self.visitedSet:
                 self._DFSR(i)
 
     def DFS(self):
         self.visited = []
         self.stack = []
+        self.visitedSet = set()
         if self.adj:
             for i in self.adj:
-                if i not in self.visited and i not in self.stack:
+                if i not in self.visitedSet and i not in self.stack:
                     self.stack.append(i)
                 while len(self.stack) > 0:
-                    a = self.stack[len(self.stack) - 1]
-                    del self.stack[len(self.stack) - 1]
-                    self.visited.append(a)
-                    for n in self.adj[a]:
-                        if n not in self.visited and n not in self.stack:
+                    current = self.stack.pop()
+                    self.visited.append(current)
+                    self.visitedSet.add(current)
+                    for n in self.adj[current]:
+                        if n not in self.visitedSet and n not in self.stack:
                             self.stack.append(n)
         return self.visited
 
     def BFS(self):
         self.visited = []
-        self.queue = []
+        self.queue = deque()
+        self.visitedSet = set()
         if self.adj:
             for i in self.adj:
-                if i not in self.visited and i not in self.queue:
+                if i not in self.visitedSet and i not in self.queue:
                     self.queue.append(i)
-                    while len(self.queue) > 0:
-                        a = self.queue[0]
-                        del self.queue[0]
-                        self.visited.append(a)
-                        for n in self.adj[a]:
-                            if n not in self.visited and n not in self.queue:
+                    while self.queue:
+                        current = self.queue.popleft()
+                        self.visited.append(current)
+                        self.visitedSet.add(current)
+                        for n in self.adj[current]:
+                            if n not in self.visitedSet and n not in self.queue:
                                 self.queue.append(n)
         return self.visited
 
@@ -95,19 +101,18 @@ class unDirectedGraph:
                 if i not in self.visited:
                     self.stack.append((i, None))
                     while not self.isEmptyArr(self.stack):
-                        a, parent = self.stack[len(self.stack) - 1]
-                        del self.stack[len(self.stack) - 1]
+                        a, parent = self.stack.pop()
                         self.visited.append(a)
                         for n in self.adj[a]:
                             if n not in self.visited and n not in [x[0] for x in self.stack]:
                                 self.stack.append((n, a))
-                            elif n in self.visited and n != parent and self.isEmptyArr(self.stack):
+                            elif n in self.visited and n != parent:
                                 print("Cycle")
                                 self.cycleDetected = True
                                 return self.visited
         return self.visited
 
-    def BFS(self):
+    def cycleDetectionBFS(self):
         self.cycleDetected = False
         self.visited = []
         self.queue = []
@@ -122,7 +127,7 @@ class unDirectedGraph:
                         for n in self.adj[a]:
                             if n not in self.visited and n not in [e[0] for e in self.queue]:
                                 self.queue.append((n, a))
-                            elif n in self.visited and n != parent and self.isEmptyArr(self.queue):
+                            elif n in self.visited and n != parent:
                                 print("Cycle")
                                 self.cycleDetected = True
                                 return self.visited

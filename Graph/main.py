@@ -1,6 +1,8 @@
 from graphClass import unDirectedGraph
 from Grid import Grid
 from graphDirectedClass import directedGraph
+print("Normal Graph:")
+print("=======================================")
 myGraph = unDirectedGraph()
 myGraph.addUndirectedEdge('A', 'B')
 myGraph.addUndirectedEdge('A', 'C')
@@ -9,13 +11,16 @@ myGraph.addUndirectedEdge('D', 'C')
 myGraph.addUndirectedEdge('F', 'E')
 print('DFS Recursive')
 print(myGraph.DFSR())
+print("=------------------------------------=")
 print('Connected Components Counter Graph')
 print(myGraph.componentsCounter())
 
-#examoleGrid
-grid = [[0, 0, 0],
-        [0, 1, 0],
-        [0, 0, 0]
+print("=======================================")
+print("Grid")
+#exampleGrid
+grid = [[1, 1, 1, 1],
+        [0, 1, 1, 1],
+        [0, 0, 0, 1]
         ]
 #exampleGridInADJ
 gridADJ = {
@@ -26,11 +31,18 @@ gridADJ = {
     (2,2): []
 }
 
-myGrid = Grid()
+myGrid = Grid(grid)
+print('Components Counter')
+print(myGrid.componentsCounter())
+print("=------------------------------------=")
 print('BFS Grid')
-print(myGrid.BFS(0, 0, grid, 2, 2))
+print(myGrid.BFS(0, 0, 2, 3))
+print("=------------------------------------=")
+print('DFS Grid')
+print(myGrid.DFSI(0, 0,2, 3))
+print("=======================================")
 
-
+print("Directed Graph Cycle Detection")
 #directedGraphCycleDetection
 directed = directedGraph()
 
@@ -40,11 +52,15 @@ directed.addDirectedEdge('a', 'c')
 directed.addDirectedEdge('b', 'd')
 directed.addDirectedEdge('c', 'e')
 directed.addDirectedEdge('d', 'e')
-
+print(directed.CycleDetectionDFSR())
+print("=======================================")
+print("Topo Sort, Kahn's Algorithm")
+print("=------------------------------------=")
 print("Directed Graph Topological Sort")
 print(directed.topologicalSort())
 
+print("=------------------------------------=")
 # Kahn's Algorithm
-
 print("Kahn's Algorithm")
 print(directed.kahnAlgorithm())
+print("=======================================")

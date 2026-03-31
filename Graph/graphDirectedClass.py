@@ -113,7 +113,6 @@ class directedGraph:
                 if i not in self.visited and i not in self.recStack:
                     return self._CycleDetectionDFSR(i)
                 elif i in self.recStack:
-                    self.cycleFound = True
                     return True
         self.recStack.remove(n)
         self.visited.append(n)
