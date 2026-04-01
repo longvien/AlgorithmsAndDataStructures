@@ -46,21 +46,20 @@ print("Directed Graph Cycle Detection")
 #directedGraphCycleDetection
 directed = directedGraph()
 
-directed.addDirectedEdge('b', 'c')
-directed.addDirectedEdge('a', 'c')
 
-directed.addDirectedEdge('b', 'd')
-directed.addDirectedEdge('c', 'e')
-directed.addDirectedEdge('d', 'e')
-print(directed.CycleDetectionDFSR())
+directed.addDirectedEdge('a', 'b')
+directed.addDirectedEdge('b', 'c')
+directed.addDirectedEdge('c', 'a')
+
+print(directed.cycleDetector())
 print("=======================================")
 print("Topo Sort, Kahn's Algorithm")
 print("=------------------------------------=")
 print("Directed Graph Topological Sort")
-print(directed.topologicalSort())
+#print(directed.topologicalSort())
 
 print("=------------------------------------=")
 # Kahn's Algorithm
 print("Kahn's Algorithm")
-print(directed.kahnAlgorithm())
+#print(directed.kahnAlgorithm())
 print("=======================================")
