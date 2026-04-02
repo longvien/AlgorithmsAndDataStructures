@@ -39,7 +39,7 @@ class Grid:
         self.visited = set()
         self.parent = {}
         self.distance = {}
-
+        backTrack = []
         if 0 > sr or sr >= self.rows or 0 > sc or sc >= self.cols or 0 > tr or tr >= self.rows or 0 > tc or tc >= self.cols:
             raise IndexError("Index out of range")
         elif self.grid[sr][sc] == 0 or self.grid[tr][tc] == 0:
@@ -52,6 +52,10 @@ class Grid:
             while len(self.queue) > 0:
                 current = self.queue.pop(0)
                 if current[0] == tr and current[1] == tc:
+                    print(self.distance[(current[0], current[1])])
+                    while self.grid[current[0]][current[1]] != self.grid[sr][sc]:
+                        backTrack.append(self.parent[(tr, tc)])
+
                     return self.distance[(current[0], current[1])]
                 else:
                     for dr, dc in self.directions:
