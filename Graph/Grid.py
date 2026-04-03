@@ -50,24 +50,27 @@ class Grid:
             self.distance[(sr, sc)] = 0
             self.queue.append((sr, sc))
             while len(self.queue) > 0:
-                current = self.queue.pop(0)
-                if current[0] == tr and current[1] == tc:
-                    print(self.distance[(current[0], current[1])])
-                    while self.grid[current[0]][current[1]] != self.grid[sr][sc]:
-                        backTrack.append(self.parent[(tr, tc)])
-
-                    return self.distance[(current[0], current[1])]
+                r, c = self.queue.pop(0)
+                if r == tr and c == tc:
+                    print(self.distance[(r, c)])
+                    while self.parent[(r, c)] != (sr, sc):
+                        backTrack.append(self.parent[(r, c)])
+                        r, c = self.parent[(r, c)]
+                    backTrack.append((sr, sc))
+                    backTrack.reverse()
+                    backTrack.append((tr, tc))
+                    return backTrack
                 else:
                     for dr, dc in self.directions:
-                        nr = current[0] + dr
-                        nc = current[1] + dc
+                        nr = r + dr
+                        nc = c + dc
                         if 0 > nr or nr >= self.rows or 0 > nc or nc >= self.cols or self.grid[nr][nc] != 1:
                             continue
                         else:
                             if (nr, nc) not in self.visited:
                                 self.visited.add((nr, nc))
-                                self.distance[(nr, nc)] = self.distance[(current[0], current[1])] + 1
-                                self.parent[(nr, nc)] = (current[0], current[1])
+                                self.distance[(nr, nc)] = self.distance[(r, c)] + 1
+                                self.parent[(nr, nc)] = (r, c)
                                 self.queue.append((nr, nc))
                             else:
                                 continue

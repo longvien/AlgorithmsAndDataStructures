@@ -101,7 +101,7 @@ class directedGraph:
     def topologicalSort(self):
         self.recStack = []
         self.topo = []
-        if self.adj and self.CycleDetectionDFSR() is False:
+        if self.adj and self.cycleDetector() is False:
             self.recStack = []
             for i in self.adj:
                 if i not in self.recStack and i not in self.topo:
@@ -121,7 +121,7 @@ class directedGraph:
     def kahnAlgorithm(self):
         self.topo = []
         self.queue = []
-        if self.adj and self.CycleDetectionDFSR() is False:
+        if self.adj and self.cycleDetector() is False:
             for n in self.adj:
                 self.indegree[n] = 0
             for i in self.adj:
