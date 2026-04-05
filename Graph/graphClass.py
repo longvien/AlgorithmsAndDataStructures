@@ -1,10 +1,12 @@
 from collections import deque
+import heapq
 class unDirectedGraph:
     def __init__(self):
         self.adj = {}
         self.visited = []
         self.visitedSet = set()
         self.stack = []
+        self.pq = []
         self.queue = deque()
         self.cycleDetected = False
     def addUndirectedEdge(self, a, b):
@@ -14,8 +16,18 @@ class unDirectedGraph:
             self.adj[b] = []
         self.adj[a].append(b)
         self.adj[b].append(a)
+
     def returnGraph(self):
         return self.adj
+
+    def DijkstraAlgorithm(self, sn, en):
+        self.pq = []
+        parent = {}
+        distance = {}
+        distance[sn] = 0
+        for i in self.adj:
+
+
 
     def DFSR(self):
         self.visited = []
@@ -92,6 +104,26 @@ class unDirectedGraph:
                 self.cycleDetected = True
                 return
 
+    def isEmptyArr(self, arr) -> bool:
+        return len(arr) < 1
+
+    def componentsCounter(self) -> int:
+        count = 0
+        self.stack = []
+        self.visited = []
+        for i in self.adj:
+            if i not in self.visited:
+                count+=1
+                self.stack.append(i)
+                while not self.isEmptyArr(self.stack):
+                    a = self.stack[len(self.stack) - 1]
+                    del self.stack[len(self.stack) - 1]
+                    self.visited.append(a)
+                    for n in self.adj[a]:
+                        if n not in self.visited:
+                            self.stack.append(n)
+        return count
+
     def CycleDetectionDFSI(self):
         self.cycleDetected = False
         self.visited = []
@@ -132,23 +164,3 @@ class unDirectedGraph:
                                 self.cycleDetected = True
                                 return self.visited
         return self.visited
-
-    def isEmptyArr(self, arr) -> bool:
-        return len(arr) < 1
-
-    def componentsCounter(self) -> int:
-        count = 0
-        self.stack = []
-        self.visited = []
-        for i in self.adj:
-            if i not in self.visited:
-                count+=1
-                self.stack.append(i)
-                while not self.isEmptyArr(self.stack):
-                    a = self.stack[len(self.stack) - 1]
-                    del self.stack[len(self.stack) - 1]
-                    self.visited.append(a)
-                    for n in self.adj[a]:
-                        if n not in self.visited:
-                            self.stack.append(n)
-        return count
