@@ -2,78 +2,30 @@ from collections import deque
 import heapq
 class unDirectedGraph:
     def __init__(self):
-        self.adj = {'A': [(3, 'C'), (2, 'F')],
+        self.adj = {}
+        self.adjD = {'A': [(3, 'C'), (2, 'F')],
                     'C': [(3, 'A'), (2, 'F'), (1, 'E')],
                     'E': [(1, 'C'), (2, 'B'), (3, 'F')],
                     'F': [(2, 'A'), (2, 'C'), (3, 'E'), (6, 'B'), (5, 'G')],
                     'D': [(4, 'C'), (1, 'B')],
                     'G': [(5, 'F'), (2, 'B')],
-                    'B': [(1, 'D'), (2, 'E'), (2, 'G'), (6, 'F')]
-                    }
+                    'B': [(1, 'D'), (2, 'E'), (2, 'G'), (6, 'F')],}
         self.visited = []
         self.visitedSet = set()
         self.stack = []
         self.pq = []
         self.queue = deque()
         self.cycleDetected = False
-    # def addUndirectedEdge(self, a, b):
-    #     if a not in self.adj:
-    #         self.adj[a] = []
-    #     if b not in self.adj:
-    #         self.adj[b] = []
-    #     self.adj[a].append(b)
-    #     self.adj[b].append(a)
+    def addUndirectedEdge(self, a, b):
+        if a not in self.adj:
+            self.adj[a] = []
+        if b not in self.adj:
+            self.adj[b] = []
+        self.adj[a].append(b)
+        self.adj[b].append(a)
 
     def returnGraph(self):
         return self.adj
-
-    def DijkstraAlgorithm(self, sn, en):
-        self.pq = []
-        parent = {}
-        self.visitedSet = set()
-        distance = {sn: 0}
-        for i in self.adj:
-            if i not in distance:
-                distance[i] = float("inf")
-            if i not in parent:
-                parent[i] = None
-            for a in self.adj[i]:
-                if a[1] not in distance:
-                    distance[a[1]] = float("inf")
-                if a[1] not in parent:
-                    parent[a[1]] = None
-        heapq.heappush(self.pq, (distance[sn], sn))
-        while self.pq:
-            priority, current = heapq.heappop(self.pq)
-            if current not in self.visitedSet:
-                self.visitedSet.add(current)
-                for n in self.adj[current]:
-                    if (distance[current] + n[0]) < distance[n[1]]:
-                        distance[n[1]] = distance[current] + n[0]
-                        parent[n[1]] = current
-                        heapq.heappush(self.pq, (distance[n[1]], n[1]))
-            else:
-                continue
-        for s in distance:
-            print(f"{s} : {distance[s]} || Parent: {parent[s]}")
-        print(f'Shortest distance from {sn} to {en}:')
-        backtrack = []
-        eno = en
-        if distance[en] == float('inf'):
-            print('Unreachable destination')
-            return
-        while parent[en] != sn:
-            backtrack.append(parent[en])
-            en = parent[en]
-        backtrack.append(sn)
-        backtrack.reverse()
-        backtrack.append(eno)
-        print(f"{eno}: {backtrack}")
-
-
-
-
-
 
     def DFSR(self):
         self.visited = []
@@ -210,6 +162,43 @@ class unDirectedGraph:
                                 self.cycleDetected = True
                                 return self.visited
         return self.visited
+
+    def DijkstraAlgorithm(self, sn, en):
+        self.pq = []
+        parent = {}
+        self.visitedSet = set()
+        distance = {sn: 0}
+        for i in self.adjD:
+            if i not in distance:
+                distance[i] = float("inf")
+            if i not in parent:
+                parent[i] = None
+            for a in self.adjD[i]:
+                if a[1] not in distance:
+                    distance[a[1]] = float("inf")
+                if a[1] not in parent:
+                    parent[a[1]] = None
+        heapq.heappush(self.pq, (distance[sn], sn))
+        while self.pq:
+            priority, current = heapq.heappop(self.pq)
+            if current not in self.visitedSet:
+                self.visitedSet.add(current)
+                for n in self.adjD[current]:
+                    if (distance[current] + n[0]) < distance[n[1]]:
+                        distance[n[1]] = distance[current] + n[0]
+                        parent[n[1]] = current
+                        heapq.heappush(self.pq, (distance[n[1]], n[1]))
+            else:
+                continue
+        backtrack = []
+        if distance[en] == float('inf'):
+            print('Unreachable destination')
+            return
+        while en is not None:
+            backtrack.append(en)
+            en = parent[en]
+        backtrack.reverse()
+        return backtrack
 
     # def CycleDetectionDFSI(self):
     #     self.cycleDetected = False
