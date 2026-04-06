@@ -1,6 +1,6 @@
 from graphClass import unDirectedGraph
 from Grid import Grid
-from graphDirectedClass import directedGraph
+from graphDirectedClass import DirectedGraph
 print("Normal Graph:")
 print("=======================================")
 myGraph = unDirectedGraph()
@@ -36,32 +36,30 @@ gridADJ = {
 myGrid = Grid(grid)
 print('Components Counter')
 print(myGrid.componentsCounter())
-print("=------------------------------------=")
 print('BFS Grid/ Shortest Path finding on unweighted Graph/Grid')
 print('Shortest Path:', myGrid.BFS(0, 0, 2, 3))
-print("=------------------------------------=")
 print('DFS Grid')
 print(myGrid.DFSI(0, 0,2, 3))
-print("=======================================")
 
+print("--------------------------------------")
 print("Directed Graph Cycle Detection")
 #directedGraphCycleDetection
-directed = directedGraph()
+myDirectedGraph = DirectedGraph()
+myDirectedGraph.addEdges('a', 'b')
+myDirectedGraph.addEdges('a', 'c')
+myDirectedGraph.addEdges('b', 'd')
+myDirectedGraph.addEdges('c', 'd')
+myDirectedGraph.addEdges('d', 'e')
+myDirectedGraph.addEdges('b', 'e')
 
+print("Directed Graph Cycle Detector")
+print(myDirectedGraph.cycleDetector())
 
-directed.addDirectedEdge('a', 'b')
-directed.addDirectedEdge('b', 'c')
-directed.addDirectedEdge('c', 'a')
+print("Directed Graph Components Counter")
+print(myDirectedGraph.componentsCounter())
 
-print(directed.cycleDetector())
-print("=======================================")
-print("Topo Sort, Kahn's Algorithm")
-print("=------------------------------------=")
-print("Directed Graph Topological Sort")
-print(directed.topologicalSort())
+print("Topological Sort")
+print(myDirectedGraph.topologicalSort())
 
-print("=------------------------------------=")
-# Kahn's Algorithm
 print("Kahn's Algorithm")
-print(directed.kahnAlgorithm())
-print("=======================================")
+print(myDirectedGraph.KahnAlgorithm())

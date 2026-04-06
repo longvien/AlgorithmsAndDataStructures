@@ -1,5 +1,5 @@
 from collections import deque
-class directedGraph:
+class DirectedGraph:
     def __init__(self):
         self.adj = {}
         self.visited = []
@@ -11,7 +11,7 @@ class directedGraph:
         self.indegree = {}
         self.cycleFound = False
 
-    def addDirectedEdge(self, a, b):
+    def addEdges(self, a, b):
         if a not in self.adj:
             self.adj[a] = []
         if b not in self.adj:
@@ -98,45 +98,52 @@ class directedGraph:
         self.visited.append(current)
         self.visitedSet.add(current)
 
-    def topologicalSort(self):
+    def topologicalSort(
+            self):  # Idea: DFS until finish to recStack, pop from recStack, append to topo. After finish all: reversed(topo). Uses recStack + topo + visitedSet
         self.recStack = []
         self.topo = []
-        if self.adj and self.cycleDetector() is False:
-            self.recStack = []
+        if not self.cycleDetector():
+            self.visitedSet = set()
             for i in self.adj:
-                if i not in self.recStack and i not in self.topo:
+                if i not in self.visitedSet:
                     self._topologicalSort(i)
             self.topo.reverse()
             return self.topo
         else:
-            raise Exception("Cycle detected! Topological Sort impossible.")
+            raise Exception("Graph is not a DAG, Cycle Detection Impossible!")
+
     def _topologicalSort(self, node):
         self.recStack.append(node)
-        for i in self.adj[node]:
-            if i not in self.recStack and i not in self.topo:
-                self._topologicalSort(i)
-        self.topo.append(node)
-        self.recStack.remove(node)
+        for neighbor in self.adj[node]:
+            if neighbor not in self.visitedSet:
+                self._topologicalSort(neighbor)
+        current = self.recStack.pop()
+        self.topo.append(current)
+        self.visitedSet.add(current)
 
-    def kahnAlgorithm(self):
-        self.topo = []
-        self.queue = []
-        if self.adj and self.cycleDetector() is False:
-            for n in self.adj:
-                self.indegree[n] = 0
+    def KahnAlgorithm(self): #Idea: 1st Create a indegree(incomingNodeNumber) dictionary. Always add all node with indegree = 0 to queue. Pop(), add node to topo reduce indegree of that node's neighbor. Continue until queue is empty. Uses: topo(final sorted), queue, visitedSet(markNodeAsVisited), indegreeDictionaries
+        if not self.cycleDetector():
+            self.topo = []
+            indegree = {}
+            self.queue = deque()
+            self.visitedSet = set()
             for i in self.adj:
-                for neighbor in self.adj[i]:
-                    self.indegree[neighbor] += 1
-            for a in self.indegree:
-                if self.indegree[a] == 0:
-                    self.queue.append(a)
-            while len(self.queue) > 0:
-                b = self.queue.pop(0)
-                self.topo.append(b)
-                for d in self.adj[b]:
-                    self.indegree[d] -= 1
-                    if self.indegree[d] == 0:
-                        self.queue.append(d)
+                if i not in indegree:
+                    indegree[i] = 0
+            for x in self.adj:
+                for y in self.adj[x]:
+                    indegree[y] += 1
+            for n in self.adj:
+                if indegree[n] == 0 and n not in self.visitedSet:
+                    self.queue.append(n)
+                    self.visitedSet.add(n)
+            while self.queue:
+                current = self.queue.popleft()
+                self.topo.append(current)
+                for i in self.adj[current]:
+                    indegree[i] -= 1
+                    if indegree[i] == 0:
+                        self.queue.append(i)
             return self.topo
         else:
-            raise Exception("Cycle detected! Kahn's Algorithm Sort Impossible")
+            raise Exception("Graph is not a DAG, Cycle Detection Impossible!")

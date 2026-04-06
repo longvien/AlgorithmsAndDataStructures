@@ -122,47 +122,6 @@ class unDirectedGraph:
                             self.stack.append(n)
         return count
 
-    def CycleDetectionDFSI(self):
-        self.cycleDetected = False
-        self.visited = []
-        self.stack = []
-        if self.adj:
-            for i in self.adj:
-                if i not in self.visited:
-                    self.stack.append((i, None))
-                    while not self.isEmptyArr(self.stack):
-                        a, parent = self.stack.pop()
-                        self.visited.append(a)
-                        for n in self.adj[a]:
-                            if n not in self.visited and n not in [x[0] for x in self.stack]:
-                                self.stack.append((n, a))
-                            elif n in self.visited and n != parent:
-                                print("Cycle")
-                                self.cycleDetected = True
-                                return self.visited
-        return self.visited
-
-    def cycleDetectionBFS(self):
-        self.cycleDetected = False
-        self.visited = []
-        self.queue = []
-        if self.adj:
-            for i in self.adj:
-                if i not in self.visited:
-                    self.queue.append((i, None))
-                    while not self.isEmptyArr(self.queue):
-                        a, parent = self.queue[0]
-                        del self.queue[0]
-                        self.visited.append(a)
-                        for n in self.adj[a]:
-                            if n not in self.visited and n not in [e[0] for e in self.queue]:
-                                self.queue.append((n, a))
-                            elif n in self.visited and n != parent:
-                                print("Cycle")
-                                self.cycleDetected = True
-                                return self.visited
-        return self.visited
-
     def DijkstraAlgorithm(self, sn, en):
         self.pq = []
         parent = {}
