@@ -121,7 +121,7 @@ class DirectedGraph:
         self.topo.append(current)
         self.visitedSet.add(current)
 
-    def KahnAlgorithm(self): #Idea: 1st Create a indegree(incomingNodeNumber) dictionary. Always add all node with indegree = 0 to queue. Pop(), add node to topo reduce indegree of that node's neighbor. Continue until queue is empty. Uses: topo(final sorted), queue, visitedSet(markNodeAsVisited), indegreeDictionaries
+    def KahnAlgorithm(self): #Idea: 1st Create an indegree(incomingNodeNumber) dictionary. Always add all node with indegree = 0 to queue. Pop(), add node to topo reduce indegree of that node's neighbor. Continue until queue is empty. Uses: topo(final sorted), queue, visitedSet(markNodeAsVisited), indegreeDictionaries
         if not self.cycleDetector():
             self.topo = []
             indegree = {}
