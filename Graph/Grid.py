@@ -1,12 +1,13 @@
+from collections import deque
 class Grid:
     def __init__(self, grid):
         self.grid = grid
         self.visited = set()
         self.distance = {} # distance(steps) tracking | for shortest path finding
         self.parent = {} # parent for backtracking | for shortest path finding
-        self.queue = [] # queue for BFS
+        self.queue = deque() # queue for BFS
         self.stack = [] # stack for DFS
-        self.directions =  [(1, 0), (-1, 0), (0, 1), (0, -1)] # directions that a cell can travels to
+        self.directions =  [(1, 0), (-1, 0), (0, 1), (0, -1)] # directions that a cell can travel to
         self.rows = len(self.grid) # number of rows
         self.cols = len(self.grid[0]) # number of columns
 
@@ -19,6 +20,7 @@ class Grid:
                     components += 1
                     self.DFS(r, c)
         return components
+
     def DFS(self, r, c):
         if 0 > r or r >= self.rows or 0 > c or c >= self.cols:
             return
@@ -35,7 +37,7 @@ class Grid:
         return self.visited
 
     def BFS(self, sr, sc, tr, tc):
-        self.queue = []
+        self.queue = deque()
         self.visited = set()
         self.parent = {}
         self.distance = {}
@@ -49,8 +51,8 @@ class Grid:
             self.visited.add((sr, sc))
             self.distance[(sr, sc)] = 0
             self.queue.append((sr, sc))
-            while len(self.queue) > 0:
-                r, c = self.queue.pop(0)
+            while self.queue:
+                r, c = self.queue.popleft()
                 if r == tr and c == tc:
                     print(self.distance[(r, c)])
                     while self.parent[(r, c)] != (sr, sc):
@@ -107,3 +109,29 @@ class Grid:
                         else:
                             continue
             raise Exception("No path to destination Found")
+
+    def multiSourceBFS(self, sourceNode):
+        rows = len(self.grid)
+        cols = len(self.grid[0])
+        distance = [[float("inf") for i in range(cols)] for i in range(rows)] # create 'rows' rows in distance. For each index in each rows initialize it to infinity.
+        self.queue = deque()
+        self.visited = set()
+        for r in range(rows):
+            for c in range(cols):
+                if self.grid[r][c] == sourceNode:
+                    distance[r][c] = 0
+                    self.queue.append((r, c))
+                    self.visited.add((r, c))
+        while self.queue:
+            r, c = self.queue.popleft()
+            for dr, dc in self.directions:
+                nr = dr + r
+                nc = dc + c
+                if 0 > nr or nr >= rows or 0 > nc or nc >= cols or (nr, nc) in self.visited:
+                    continue
+                distance[nr][nc] = distance[r][c] + 1
+                self.queue.append((nr, nc))
+                self.visited.add((nr, nc))
+        return distance
+
+

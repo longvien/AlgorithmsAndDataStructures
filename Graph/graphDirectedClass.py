@@ -147,3 +147,19 @@ class DirectedGraph:
             return self.topo
         else:
             raise Exception("Graph is not a DAG, Cycle Detection Impossible!")
+
+    def componentsCounter(self):
+        self.visitedSet = set()
+        self.stack = []
+        counter = 0
+        for i in self.adj:
+            if i not in self.visitedSet:
+                counter += 1
+                self.stack.append(i)
+                while self.stack:
+                    current = self.stack.pop()
+                    self.visitedSet.add(current)
+                    for neighbor in self.adj[current]:
+                        if neighbor not in self.visitedSet:
+                            self.stack.append(neighbor)
+        return counter
