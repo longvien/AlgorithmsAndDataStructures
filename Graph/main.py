@@ -1,70 +1,48 @@
-from graphClass import unDirectedGraph
+from UDGraph import UndirectedGraph
+from DGraph import DirectedGraph
 from Grid import Grid
-from graphDirectedClass import DirectedGraph
-print("Normal Graph:")
-myGraph = unDirectedGraph()
 
-myGraph.addUndirectedEdge('A', 'B')
-myGraph.addUndirectedEdge('A', 'C')
-myGraph.addUndirectedEdge('B', 'D')
-myGraph.addUndirectedEdge('D', 'C')
-myGraph.addUndirectedEdge('F', 'E')
-print('DFS Recursive')
-print(myGraph.DFSR())
-print("                                      ")
-print('Connected Components Counter Graph')
-print(myGraph.componentsCounter())
-print("                                      ")
-print("Dijkstra Algorithm")
-print(myGraph.DijkstraAlgorithm('A', 'B'))
-print("                                      ")
-print("                                      ")
-print("Grid")
-#exampleGrid
-grid = [['S', 0, 0, 0],
-        [0, 0, 'S', 0],
-        [0, 0, 0, 0]
-        ]
-#exampleGridInADJ
-gridADJ = {
-    (0,0): [(0,1)],
-    (0,1): [(0,0), (1,1)],
-    (1,1): [(0,1)],
-    (2,0): [],
-    (2,2): []
-}
+def main():
+    myUDG = UndirectedGraph()
+    myUDG.addEdges('a', 'b')
+    myUDG.addEdges('a', 'c')
+    myUDG.addEdges('b', 'd')
+    myUDG.addEdges('z', 'g')
+    print("Undirected Graph")
+    print(f"DFS Recursive: {myUDG.DFSR()}")
+    print(f"DFS Interactive: {myUDG.DFS()}")
+    print(f"BFS: {myUDG.BFS()}")
+    print(f"Components Counter: {myUDG.componentsCounter()}")
+    print(f"Cycle Detector: {myUDG.cycleDetector()}")
+    # print(f"Dijktra's Algorithm: {myUDG.DijkstraAlgorithm('A')}")
 
-myGrid = Grid(grid)
-print('Components Counter')
-print(myGrid.componentsCounter())
-print("                                      ")
-print('BFS Grid/ Shortest Path finding on unweighted Graph/Grid')
-print('Shortest Path:', myGrid.BFS(0, 0, 2, 3))
-print("                                      ")
-print("Multi Source BFS")
-print(myGrid.multiSourceBFS('S'))
+    print("                            ")
+    myDG = DirectedGraph()
+    myDG.addEdges('a', 'b')
+    myDG.addEdges('b', 'd')
+    myDG.addEdges('b', 'c')
+    myDG.addEdges('d', 'e')
+    myDG.addEdges('c', 'g')
 
-# #directedGraphCycleDetection
-myDirectedGraph = DirectedGraph()
-myDirectedGraph.addEdges('a', 'b')
-myDirectedGraph.addEdges('a', 'c')
-myDirectedGraph.addEdges('b', 'd')
-myDirectedGraph.addEdges('c', 'd')
-myDirectedGraph.addEdges('d', 'e')
-myDirectedGraph.addEdges('b', 'e')
+    print("Directed Graph")
+    print(f"DFS Recursive: {myDG.DFSR()}")
+    print(f"DFS Interactive: {myDG.DFS()}")
+    print(f"BFS: {myDG.BFS()}")
+    print(f"Components Counter: {myDG.componentsCounter()}")
+    print(f"Cycle Detector: {myDG.cycleDetector()}")
+    print(f"Topological Sort DFS based: {myDG.topologicalSort()}")
+    print(f"Kahn's Algorithm (Topological Sort BFS based): {myDG.KahnAlgorithm()}")
 
-print("                                      ")
-print("Directed Graph Cycle Detector")
-print(myDirectedGraph.cycleDetector())
+    print("                            ")
+    grid = [[1, 1, 1],
+            [6, 0, 6],
+            [1, 1, 1]]
+    myGrid = Grid(grid)
+    print("Grid")
+    print(f"DFS: {myGrid.DFSR(0,0)}")
+    #print(f"Shortest Path BFS: {myGrid.BFSShortestPath(0, 0, 2, 2)}")
+    sources = [6]
+    print(f"Multi Source BFS: {myGrid.MultiSourceBFS(sources)}")
 
-print("                                      ")
-print("Directed Graph Components Counter")
-print(myDirectedGraph.componentsCounter())
-
-print("                                      ")
-print("Topological Sort")
-print(myDirectedGraph.topologicalSort())
-
-print("                                      ")
-print("Kahn's Algorithm")
-print(myDirectedGraph.KahnAlgorithm())
+if __name__ == "__main__":
+    main()
