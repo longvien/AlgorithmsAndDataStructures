@@ -29,6 +29,26 @@ class Grid:
                 nc = dc + c
                 self._DFSR(nr, nc)
 
+    def componentsCounter(self):
+        self.visitedSet = set()
+        counter = 0
+        for r in range(self.rows):
+            for c in range(self.cols):
+                if (r, c) not in self.visitedSet and self.grid[r][c] == 1:
+                    counter += 1
+                    self._componentsCounter(r, c)
+        return counter
+    def _componentsCounter(self, r, c):
+        if (r, c) in self.visitedSet or 0 > r or r >= self.rows or 0 > c or c >= self.cols or self.grid[r][c] == 0:
+            return
+        if self.grid[r][c] == 1:
+            self.visitedSet.add((r, c))
+            for dr, dc in self.directions:
+                nr = dr + r
+                nc = dc + c
+                self._componentsCounter(nr, nc)
+
+
     def BFSShortestPath(self, r, c, ar, ac):
         if 0 > r or r >= self.rows or 0 > c or c >= self.cols or 0 > ar or ar >= self.rows or 0 > ac or ac >= self.cols: raise Exception("Position out of range")
         if self.grid[r][c] == 0 or self.grid[ar][ac] == 0: raise Exception("Invalid Position")

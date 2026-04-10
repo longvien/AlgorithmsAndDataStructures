@@ -35,12 +35,13 @@ def main():
 
     print("                            ")
     grid = [[1, 1, 1],
-            [6, 0, 6],
-            [1, 1, 1]]
+            [1, 0, 6],
+            [1, 6, 1]]
     myGrid = Grid(grid)
     print("Grid")
     print(f"DFS: {myGrid.DFSR(0,0)}")
-    #print(f"Shortest Path BFS: {myGrid.BFSShortestPath(0, 0, 2, 2)}")
+    print(f"Components Counter {myGrid.componentsCounter()}")
+    print(f"Shortest Path BFS: {myGrid.BFSShortestPath(0, 2, 2, 0)}")
     sources = [6]
     print(f"Multi Source BFS: {myGrid.MultiSourceBFS(sources)}")
 
