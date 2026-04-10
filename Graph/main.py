@@ -14,7 +14,7 @@ def main():
     print(f"BFS: {myUDG.BFS()}")
     print(f"Components Counter: {myUDG.componentsCounter()}")
     print(f"Cycle Detector: {myUDG.cycleDetector()}")
-    # print(f"Dijktra's Algorithm: {myUDG.DijkstraAlgorithm('A')}")
+    print(f"Dijktra's Algorithm: {myUDG.DijkstraAlgorithm('A', 'E')}")
 
     print("                            ")
     myDG = DirectedGraph()

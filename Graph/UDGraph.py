@@ -105,63 +105,37 @@ class UndirectedGraph:
                 self.cycleFound = True
                 return
 
-    def DijkstraAlgorithm(self, node):
-        pq = []
-        distance = {}
-        self.visitedSet = set()
-        parent = {}
+    def DijkstraAlgorithm(self, node, destination):
+        pq = [] # priority queue: Let's programme new what to process next
+        distance = {} # distance: save distance from source node (node) to all other nodes
+        parent = {} # parent: hold parent of each node for backtracking
+        backtrack = [] # backtrack: saved backtracked node from destination to source
 
+        # initialize src node
         distance[node] = 0
+        parent[node] = None
+
+        # set destination of other to infinity
         for i in self.graphD:
             if i not in distance:
                 distance[i] = float("inf")
+                parent[i] = None
+        # push src node
         heapq.heappush(pq, (distance[node], node))
-        self.visitedSet.add(node)
         while pq:
-            cost, node = heapq.heappop(pq)
-            for neighbor in self.graphD[node]:
-                if (cost + neighbor[1]) < distance[neighbor[0]]:
-                    distance[neighbor[0]] = cost + neighbor[1]
-                    parent[neighbor] = node
-                    self.visitedSet.add(neighbor)
-                    heapq.heappush(pq, (distance[neighbor[0]], neighbor[1]))
-        for i in distance:
-            print(f"{i} : {distance[i]}")
-
-
-    # def DijkstraAlgorithm(self, sn, en):
-    #     self.pq = []
-    #     parent = {}
-    #     self.visitedSet = set()
-    #     distance = {sn: 0}
-    #     for i in self.adjD:
-    #         if i not in distance:
-    #             distance[i] = float("inf")
-    #         if i not in parent:
-    #             parent[i] = None
-    #         for a in self.adjD[i]:
-    #             if a[1] not in distance:
-    #                 distance[a[1]] = float("inf")
-    #             if a[1] not in parent:
-    #                 parent[a[1]] = None
-    #     heapq.heappush(self.pq, (distance[sn], sn))
-    #     while self.pq:
-    #         priority, current = heapq.heappop(self.pq)
-    #         if current not in self.visitedSet:
-    #             self.visitedSet.add(current)
-    #             for n in self.adjD[current]:
-    #                 if (distance[current] + n[0]) < distance[n[1]]:
-    #                     distance[n[1]] = distance[current] + n[0]
-    #                     parent[n[1]] = current
-    #                     heapq.heappush(self.pq, (distance[n[1]], n[1]))
-    #         else:
-    #             continue
-    #     backtrack = []
-    #     if distance[en] == float('inf'):
-    #         print('Unreachable destination')
-    #         return
-    #     while en is not None:
-    #         backtrack.append(en)
-    #         en = parent[en]
-    #     backtrack.reverse()
-    #     return backtrack
+            cost, current = heapq.heappop(pq)
+            if current == destination: # backtrack
+                print(f"Length from {node} to {destination}: {distance[current]}")
+                while current is not None:
+                    backtrack.append(current)
+                    current = parent[current]
+                backtrack.reverse()
+                return backtrack
+            for n in self.graphD[current]: # loop neighbors and update if necessary
+                if cost + n[1] < distance[n[0]]:
+                    distance[n[0]] = cost + n[1]
+                    heapq.heappush(pq, (distance[n[0]], n[0]))
+                    parent[n[0]] = current
+            else:
+                continue
+        raise Exception("Destination unreachable!!!")
