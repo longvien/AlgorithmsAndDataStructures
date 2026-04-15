@@ -35,7 +35,7 @@ class DSUN:
         count = 0
         edges.sort(key=self.getWeight)
         for edge in edges:
-            if count == n - 1:
+            if count == n - 1: # We would always need n-1 edges to connect n nodes
                 break
             if self.find(edge[0]) == self.find(edge[1]):
                 continue

@@ -1,6 +1,7 @@
 class DSU:
-    def __init__(self):
+    def __init__(self, x):
         self.parent = {}
+        self.size = [1 for i in range(x)]
     def makeSet(self, x):
         self.parent[x] = x
     def find(self, x):
@@ -36,8 +37,6 @@ class DSU:
             self.union(edge[0], edge[1])
             mst.append(edge)
         return mst
-
-
 
 
 
