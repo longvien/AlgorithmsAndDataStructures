@@ -1,9 +1,10 @@
 class DSU:
     def __init__(self, x):
         self.parent = {}
-        self.size = [1 for i in range(x)]
+        self.size = {}
     def makeSet(self, x):
         self.parent[x] = x
+        self.size[x] = 1
     def find(self, x):
         if x == self.parent[x]:
             return x
