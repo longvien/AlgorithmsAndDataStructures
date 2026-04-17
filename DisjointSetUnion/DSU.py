@@ -1,20 +1,28 @@
 class DSU:
-    def __init__(self, x):
+    def __init__(self):
         self.parent = {}
         self.size = {}
+
     def makeSet(self, x):
         self.parent[x] = x
         self.size[x] = 1
+
     def find(self, x):
-        if x == self.parent[x]:
+        if self.parent[x] == x:
             return x
         self.parent[x] = self.find(self.parent[x])
         return self.parent[x]
+
     def union(self, x, y):
         rootX = self.find(x)
         rootY = self.find(y)
-        if rootX != rootY:
-            self.parent[rootX] = rootY
+        if rootX == rootY:
+            return False
+        if self.size[rootX] > self.size[rootY]:
+            self.parent[rootY] = rootX
+            self.size[rootX] += self.size[rootY]
+        elif self.size[rootY] > self.size[rootX]:
+            self.parent[rootX] = rootY #will be continue tomorrow (Tomorrow Start DP)
 
     def getWeight(self, edge):
         return edge[2]
