@@ -4,6 +4,8 @@ class DSUN:
         self.size = [1 for i in range(x)] # array with x ones | [1] * x
 
     def find(self, x):
+        if x < 0 or x >= len(self.parentArray):
+            return False
         if self.parentArray[x] == x:
             return x
         self.parentArray[x] = self.find(self.parentArray[x])
@@ -43,7 +45,7 @@ class DSUN:
             mst.append(edge)
             cost += edge[2]
             count += 1
-        return cost
+        return mst # or return cost, depends on task
 
 
 
