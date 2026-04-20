@@ -1,16 +1,26 @@
 #memoization
 def fib(n):
-    memo = [-1 for i in range(n + 1)]
-    return _fib(n, memo)
-def _fib(n, memo):
+    dp = [-1 for i in range(n + 1)]
+    return _fib(n, dp)
+def _fib(n, dp):
     if n <= 1:
         return n
-    if memo[n] != -1:
-        return memo[n]
-    memo[n] = _fib(n - 1, memo) + _fib(n - 2, memo)
-    return memo[n]
+    if dp[n] != -1:
+        return dp[n]
+    dp[n] = _fib(n - 1, dp) + _fib(n - 2, dp)
+    return dp[n]
 
 #tabulation
+def fibonacci(n):
+    dp = [-1 for i in range(n + 1)]
+    dp[0] = 0
+    dp[1] = 1
+
+    for i in range(2, n + 1):
+        dp[i] = dp[i - 1] + dp[i - 2]
+    return dp[n]
+
+#tabulation | Optimized
 def fibo(n):
     n1 = 0
     n2 = 1
@@ -22,4 +32,6 @@ def fibo(n):
         n1 = current
     return n2
 
-print(fibo(6))
+print(fib(6)) # 8
+print(fibo(6)) # 8
+print(fibonacci(6)) # 8
