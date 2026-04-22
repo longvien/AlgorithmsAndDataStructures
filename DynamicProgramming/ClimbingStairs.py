@@ -1,3 +1,4 @@
+#tabulation
 def climbingStairs(n):
     dp = [-1 for i in range(n + 1)]
     dp[0] = 1
