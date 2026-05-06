@@ -1,15 +1,20 @@
-class Solution:
-    def coinChange(self, coins: list[int], amount: int) -> int:
-        dp = [float("inf") for i in range(amount + 1)]
-        dp[0] = 0
-        if amount == 0:
-            return 0
-        for i in range(1, amount + 1):
-            for c in coins:
-                if i - c < 0:
-                    continue
-                dp[i] = min(dp[i], dp[i - c] + 1)
-        if dp[amount] == float("inf"):
-            return -1
-        else:
-            return dp[amount]
+def coinChange(cost, amount):
+    dp = [float("inf") for i in range(amount + 1)]
+    dp[0] = 0
+    result =  _coinChange(cost, amount, dp)
+    if result == float("inf"):
+        return -1
+    return result
+def _coinChange(cost, amount, dp):
+    if amount == 0:
+        return 0
+    if dp[amount] != float("inf"):
+        return dp[amount]
+    for c in cost:
+        if c <= amount:
+            dp[amount] = min(dp[amount], _coinChange(cost, amount - c, dp) + 1)
+    return dp[amount]
+
+cost = [186,419,83,408]
+print(coinChange(cost, 6249))
+
