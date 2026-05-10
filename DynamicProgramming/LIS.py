@@ -12,5 +12,3 @@ def LIST(nums):
 
 arr = [1, 2, 5, 6, 7, 5, 4, 4]
 print(LIST(arr)) # Pass! Time Complexity: 0(n**2)
-
-
