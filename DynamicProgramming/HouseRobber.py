@@ -15,7 +15,6 @@ def _HouseRobberM(house, dp, n):
 
 houses = [2,7,9,3,1]
 print(HouseRobberM(houses))
-
 #tabulation
 def HouseRobberT(houses):
     if len(houses) == 1:
