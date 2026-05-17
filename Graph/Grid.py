@@ -12,7 +12,7 @@ class Grid:
     def DFSR(self, r, c):
         if 0 > r or r >= self.rows or 0 > c or c >= self.cols: raise Exception("Position out of range")
         if self.grid[r][c] == 0: raise Exception("Invalid Position")
-        self.visited = set()
+        self.visitedSet = set()
         self.visited = []
         self._DFSR(r, c)
         return self.visited
@@ -56,7 +56,6 @@ class Grid:
         parent = {}
         self.queue = deque()
         self.visitedSet = set()
-
         self.queue.append((r, c))
         self.visitedSet.add((r, c))
         distance[(r, c)] = 0
