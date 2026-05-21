@@ -1,2 +1,2 @@
 AlgorithmsAndDataStructures
-Practice + Learn + Competition Preparation
+Practice + Learn + CP Training
