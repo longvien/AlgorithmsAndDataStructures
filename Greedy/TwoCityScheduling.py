@@ -26,7 +26,6 @@ class Solution:
                 for i in range(n, -1, -1):
                     total += costs[i][1]
         return total
-
     def sortDifference(self, pair):
         return abs(pair[0] - pair[1])
 
