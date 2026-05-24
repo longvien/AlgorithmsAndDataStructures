@@ -15,7 +15,6 @@ def IntervalScheduling(intervals):
             count += 1
             i += 1
     return count
-
 def getEnd(interval):
     return interval[1]
 print(IntervalScheduling([(1,100), (2,3), (3,4), (4,5)]))
