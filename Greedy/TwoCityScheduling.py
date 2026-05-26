@@ -28,4 +28,3 @@ class Solution:
         return total
     def sortDifference(self, pair):
         return abs(pair[0] - pair[1])
-#leetcode, task 1029
