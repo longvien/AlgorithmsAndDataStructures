@@ -16,6 +16,3 @@ class Solution:
         return pair[1]
 
 
-
-
-
