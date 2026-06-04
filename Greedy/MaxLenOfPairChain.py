@@ -14,6 +14,3 @@ class Solution:
         return total
     def sortEnd(self, pair):
         return pair[1]
-
-
-
