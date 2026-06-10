@@ -16,5 +16,3 @@ class Solution:
         dp1[0] = max(nums[0], dp1[1])
 
         return max(max(dp), max(dp1))
-
-
