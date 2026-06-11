@@ -20,3 +20,5 @@ class Solution:
                 else:
                     dp[i + 1] = dp[i] + dp[i - 1]
         return dp[len(s)]
+
+
