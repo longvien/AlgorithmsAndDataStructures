@@ -25,3 +25,4 @@ class Solution:
         return dp[len(dp) - 1]
     def getKey(self, n):
         return n[0]
+
