@@ -27,7 +27,7 @@ int main () {
     } 
     
     model.AddLessOrEqual(weightT, 5);
-    
+    model.AddEquality(LinearExpr(x[3]), 1);
     LinearExpr valueT;
 
     for (int i = 0; i < x.size(); i++) {
@@ -36,11 +36,12 @@ int main () {
 
     model.Maximize(valueT);
 
-    const CpSolverResponse response = Solve(model.Build());
+    CpSolverResponse response = Solve(model.Build());
+    
     cout << "Value: " << response.objective_value() << "\n";
     cout << "Items:";
     for (int i = 0; i < x.size(); i++) {
-        
+        cout << LinearExpr(x[i]) << " ";
     }
     return 0;
 }
