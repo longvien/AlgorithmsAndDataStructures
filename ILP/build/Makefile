@@ -117,41 +117,78 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ilp
+# Target rules for targets named ilpBasicSyntax
 
 # Build rule for target.
-ilp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ilp
-.PHONY : ilp
+ilpBasicSyntax: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ilpBasicSyntax
+.PHONY : ilpBasicSyntax
 
 # fast build rule for target.
-ilp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilp.dir/build.make CMakeFiles/ilp.dir/build
-.PHONY : ilp/fast
+ilpBasicSyntax/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilpBasicSyntax.dir/build.make CMakeFiles/ilpBasicSyntax.dir/build
+.PHONY : ilpBasicSyntax/fast
 
-ilp.o: ilp.cpp.o
-.PHONY : ilp.o
+#=============================================================================
+# Target rules for targets named knapsack
+
+# Build rule for target.
+knapsack: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 knapsack
+.PHONY : knapsack
+
+# fast build rule for target.
+knapsack/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/build
+.PHONY : knapsack/fast
+
+ilpBasicSyntax.o: ilpBasicSyntax.cpp.o
+.PHONY : ilpBasicSyntax.o
 
 # target to build an object file
-ilp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilp.dir/build.make CMakeFiles/ilp.dir/ilp.cpp.o
-.PHONY : ilp.cpp.o
+ilpBasicSyntax.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilpBasicSyntax.dir/build.make CMakeFiles/ilpBasicSyntax.dir/ilpBasicSyntax.cpp.o
+.PHONY : ilpBasicSyntax.cpp.o
 
-ilp.i: ilp.cpp.i
-.PHONY : ilp.i
+ilpBasicSyntax.i: ilpBasicSyntax.cpp.i
+.PHONY : ilpBasicSyntax.i
 
 # target to preprocess a source file
-ilp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilp.dir/build.make CMakeFiles/ilp.dir/ilp.cpp.i
-.PHONY : ilp.cpp.i
+ilpBasicSyntax.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilpBasicSyntax.dir/build.make CMakeFiles/ilpBasicSyntax.dir/ilpBasicSyntax.cpp.i
+.PHONY : ilpBasicSyntax.cpp.i
 
-ilp.s: ilp.cpp.s
-.PHONY : ilp.s
+ilpBasicSyntax.s: ilpBasicSyntax.cpp.s
+.PHONY : ilpBasicSyntax.s
 
 # target to generate assembly for a file
-ilp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilp.dir/build.make CMakeFiles/ilp.dir/ilp.cpp.s
-.PHONY : ilp.cpp.s
+ilpBasicSyntax.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilpBasicSyntax.dir/build.make CMakeFiles/ilpBasicSyntax.dir/ilpBasicSyntax.cpp.s
+.PHONY : ilpBasicSyntax.cpp.s
+
+knapsack.o: knapsack.cpp.o
+.PHONY : knapsack.o
+
+# target to build an object file
+knapsack.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/knapsack.cpp.o
+.PHONY : knapsack.cpp.o
+
+knapsack.i: knapsack.cpp.i
+.PHONY : knapsack.i
+
+# target to preprocess a source file
+knapsack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/knapsack.cpp.i
+.PHONY : knapsack.cpp.i
+
+knapsack.s: knapsack.cpp.s
+.PHONY : knapsack.s
+
+# target to generate assembly for a file
+knapsack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/knapsack.cpp.s
+.PHONY : knapsack.cpp.s
 
 # Help Target
 help:
@@ -161,10 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ilp"
-	@echo "... ilp.o"
-	@echo "... ilp.i"
-	@echo "... ilp.s"
+	@echo "... ilpBasicSyntax"
+	@echo "... knapsack"
+	@echo "... ilpBasicSyntax.o"
+	@echo "... ilpBasicSyntax.i"
+	@echo "... ilpBasicSyntax.s"
+	@echo "... knapsack.o"
+	@echo "... knapsack.i"
+	@echo "... knapsack.s"
 .PHONY : help
 
 

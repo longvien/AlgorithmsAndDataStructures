@@ -63,11 +63,13 @@ CMAKE_BINARY_DIR = /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/ilp.dir/all
+all: CMakeFiles/ilpBasicSyntax.dir/all
+all: CMakeFiles/knapsack.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/ilp.dir/codegen
+codegen: CMakeFiles/ilpBasicSyntax.dir/codegen
+codegen: CMakeFiles/knapsack.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +77,73 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/ilp.dir/clean
+clean: CMakeFiles/ilpBasicSyntax.dir/clean
+clean: CMakeFiles/knapsack.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ilp.dir
+# Target rules for target CMakeFiles/ilpBasicSyntax.dir
 
 # All Build rule for target.
-CMakeFiles/ilp.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilp.dir/build.make CMakeFiles/ilp.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilp.dir/build.make CMakeFiles/ilp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles --progress-num=1,2 "Built target ilp"
-.PHONY : CMakeFiles/ilp.dir/all
+CMakeFiles/ilpBasicSyntax.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilpBasicSyntax.dir/build.make CMakeFiles/ilpBasicSyntax.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilpBasicSyntax.dir/build.make CMakeFiles/ilpBasicSyntax.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles --progress-num=1,2 "Built target ilpBasicSyntax"
+.PHONY : CMakeFiles/ilpBasicSyntax.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ilp.dir/rule: cmake_check_build_system
+CMakeFiles/ilpBasicSyntax.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ilp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ilpBasicSyntax.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles 0
-.PHONY : CMakeFiles/ilp.dir/rule
+.PHONY : CMakeFiles/ilpBasicSyntax.dir/rule
 
 # Convenience name for target.
-ilp: CMakeFiles/ilp.dir/rule
-.PHONY : ilp
+ilpBasicSyntax: CMakeFiles/ilpBasicSyntax.dir/rule
+.PHONY : ilpBasicSyntax
 
 # codegen rule for target.
-CMakeFiles/ilp.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilp.dir/build.make CMakeFiles/ilp.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles --progress-num=1,2 "Finished codegen for target ilp"
-.PHONY : CMakeFiles/ilp.dir/codegen
+CMakeFiles/ilpBasicSyntax.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilpBasicSyntax.dir/build.make CMakeFiles/ilpBasicSyntax.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles --progress-num=1,2 "Finished codegen for target ilpBasicSyntax"
+.PHONY : CMakeFiles/ilpBasicSyntax.dir/codegen
 
 # clean rule for target.
-CMakeFiles/ilp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilp.dir/build.make CMakeFiles/ilp.dir/clean
-.PHONY : CMakeFiles/ilp.dir/clean
+CMakeFiles/ilpBasicSyntax.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ilpBasicSyntax.dir/build.make CMakeFiles/ilpBasicSyntax.dir/clean
+.PHONY : CMakeFiles/ilpBasicSyntax.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/knapsack.dir
+
+# All Build rule for target.
+CMakeFiles/knapsack.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles --progress-num=3,4 "Built target knapsack"
+.PHONY : CMakeFiles/knapsack.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/knapsack.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/knapsack.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles 0
+.PHONY : CMakeFiles/knapsack.dir/rule
+
+# Convenience name for target.
+knapsack: CMakeFiles/knapsack.dir/rule
+.PHONY : knapsack
+
+# codegen rule for target.
+CMakeFiles/knapsack.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles --progress-num=3,4 "Finished codegen for target knapsack"
+.PHONY : CMakeFiles/knapsack.dir/codegen
+
+# clean rule for target.
+CMakeFiles/knapsack.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/clean
+.PHONY : CMakeFiles/knapsack.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
