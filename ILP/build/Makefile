@@ -142,6 +142,19 @@ knapsack/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/build
 .PHONY : knapsack/fast
 
+#=============================================================================
+# Target rules for targets named schoolProjectAllocation
+
+# Build rule for target.
+schoolProjectAllocation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 schoolProjectAllocation
+.PHONY : schoolProjectAllocation
+
+# fast build rule for target.
+schoolProjectAllocation/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/schoolProjectAllocation.dir/build.make CMakeFiles/schoolProjectAllocation.dir/build
+.PHONY : schoolProjectAllocation/fast
+
 ilpBasicSyntax.o: ilpBasicSyntax.cpp.o
 .PHONY : ilpBasicSyntax.o
 
@@ -190,6 +203,30 @@ knapsack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/knapsack.cpp.s
 .PHONY : knapsack.cpp.s
 
+schoolProjectAllocation.o: schoolProjectAllocation.cpp.o
+.PHONY : schoolProjectAllocation.o
+
+# target to build an object file
+schoolProjectAllocation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/schoolProjectAllocation.dir/build.make CMakeFiles/schoolProjectAllocation.dir/schoolProjectAllocation.cpp.o
+.PHONY : schoolProjectAllocation.cpp.o
+
+schoolProjectAllocation.i: schoolProjectAllocation.cpp.i
+.PHONY : schoolProjectAllocation.i
+
+# target to preprocess a source file
+schoolProjectAllocation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/schoolProjectAllocation.dir/build.make CMakeFiles/schoolProjectAllocation.dir/schoolProjectAllocation.cpp.i
+.PHONY : schoolProjectAllocation.cpp.i
+
+schoolProjectAllocation.s: schoolProjectAllocation.cpp.s
+.PHONY : schoolProjectAllocation.s
+
+# target to generate assembly for a file
+schoolProjectAllocation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/schoolProjectAllocation.dir/build.make CMakeFiles/schoolProjectAllocation.dir/schoolProjectAllocation.cpp.s
+.PHONY : schoolProjectAllocation.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -200,12 +237,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ilpBasicSyntax"
 	@echo "... knapsack"
+	@echo "... schoolProjectAllocation"
 	@echo "... ilpBasicSyntax.o"
 	@echo "... ilpBasicSyntax.i"
 	@echo "... ilpBasicSyntax.s"
 	@echo "... knapsack.o"
 	@echo "... knapsack.i"
 	@echo "... knapsack.s"
+	@echo "... schoolProjectAllocation.o"
+	@echo "... schoolProjectAllocation.i"
+	@echo "... schoolProjectAllocation.s"
 .PHONY : help
 
 

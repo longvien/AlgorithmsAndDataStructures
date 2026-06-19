@@ -1,4 +1,5 @@
 /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles/ilpBasicSyntax.dir
 /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles/knapsack.dir
+/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles/schoolProjectAllocation.dir
 /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles/edit_cache.dir
 /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles/rebuild_cache.dir

@@ -65,11 +65,13 @@ CMAKE_BINARY_DIR = /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build
 # The main recursive "all" target.
 all: CMakeFiles/ilpBasicSyntax.dir/all
 all: CMakeFiles/knapsack.dir/all
+all: CMakeFiles/schoolProjectAllocation.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/ilpBasicSyntax.dir/codegen
 codegen: CMakeFiles/knapsack.dir/codegen
+codegen: CMakeFiles/schoolProjectAllocation.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -79,6 +81,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/ilpBasicSyntax.dir/clean
 clean: CMakeFiles/knapsack.dir/clean
+clean: CMakeFiles/schoolProjectAllocation.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -144,6 +147,38 @@ CMakeFiles/knapsack.dir/codegen:
 CMakeFiles/knapsack.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/knapsack.dir/build.make CMakeFiles/knapsack.dir/clean
 .PHONY : CMakeFiles/knapsack.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/schoolProjectAllocation.dir
+
+# All Build rule for target.
+CMakeFiles/schoolProjectAllocation.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/schoolProjectAllocation.dir/build.make CMakeFiles/schoolProjectAllocation.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/schoolProjectAllocation.dir/build.make CMakeFiles/schoolProjectAllocation.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles --progress-num=5,6 "Built target schoolProjectAllocation"
+.PHONY : CMakeFiles/schoolProjectAllocation.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/schoolProjectAllocation.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/schoolProjectAllocation.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles 0
+.PHONY : CMakeFiles/schoolProjectAllocation.dir/rule
+
+# Convenience name for target.
+schoolProjectAllocation: CMakeFiles/schoolProjectAllocation.dir/rule
+.PHONY : schoolProjectAllocation
+
+# codegen rule for target.
+CMakeFiles/schoolProjectAllocation.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/schoolProjectAllocation.dir/build.make CMakeFiles/schoolProjectAllocation.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/build/CMakeFiles --progress-num=5,6 "Finished codegen for target schoolProjectAllocation"
+.PHONY : CMakeFiles/schoolProjectAllocation.dir/codegen
+
+# clean rule for target.
+CMakeFiles/schoolProjectAllocation.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/schoolProjectAllocation.dir/build.make CMakeFiles/schoolProjectAllocation.dir/clean
+.PHONY : CMakeFiles/schoolProjectAllocation.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
