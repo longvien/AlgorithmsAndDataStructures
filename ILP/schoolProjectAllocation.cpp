@@ -39,7 +39,7 @@ int main() {
     LinearExpr tSuitability;
     for (int n = 0; n < x.size(); n++) {
         for (int i = 0; i < 4; i++) {
-            tSuitability += LinearExpr(x[n][i]) * projects[i][n]; 
+            tSuitability += LinearExpr(x[n][i]) * projects[i][n];
         }
     }
     model.Maximize(tSuitability); // max j=1∑4 x[i][j] * suitability[j][i], i ∈ {1, 2, 3, 4} | max suitability possible
