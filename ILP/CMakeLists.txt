@@ -14,3 +14,7 @@ target_link_libraries(knapsack ortools::ortools)
 add_executable(schoolProjectAllocation schoolProjectAllocation.cpp)
 target_link_libraries(schoolProjectAllocation ortools::ortools)
 
+
+add_executable(ClassroomAsignments ClassroomAsignments.cpp)
+target_link_libraries(ClassroomAsignments ortools::ortools)
+

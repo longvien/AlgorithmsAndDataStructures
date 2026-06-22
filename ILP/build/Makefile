@@ -155,6 +155,43 @@ schoolProjectAllocation/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/schoolProjectAllocation.dir/build.make CMakeFiles/schoolProjectAllocation.dir/build
 .PHONY : schoolProjectAllocation/fast
 
+#=============================================================================
+# Target rules for targets named ClassroomAsignments
+
+# Build rule for target.
+ClassroomAsignments: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ClassroomAsignments
+.PHONY : ClassroomAsignments
+
+# fast build rule for target.
+ClassroomAsignments/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClassroomAsignments.dir/build.make CMakeFiles/ClassroomAsignments.dir/build
+.PHONY : ClassroomAsignments/fast
+
+ClassroomAsignments.o: ClassroomAsignments.cpp.o
+.PHONY : ClassroomAsignments.o
+
+# target to build an object file
+ClassroomAsignments.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClassroomAsignments.dir/build.make CMakeFiles/ClassroomAsignments.dir/ClassroomAsignments.cpp.o
+.PHONY : ClassroomAsignments.cpp.o
+
+ClassroomAsignments.i: ClassroomAsignments.cpp.i
+.PHONY : ClassroomAsignments.i
+
+# target to preprocess a source file
+ClassroomAsignments.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClassroomAsignments.dir/build.make CMakeFiles/ClassroomAsignments.dir/ClassroomAsignments.cpp.i
+.PHONY : ClassroomAsignments.cpp.i
+
+ClassroomAsignments.s: ClassroomAsignments.cpp.s
+.PHONY : ClassroomAsignments.s
+
+# target to generate assembly for a file
+ClassroomAsignments.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClassroomAsignments.dir/build.make CMakeFiles/ClassroomAsignments.dir/ClassroomAsignments.cpp.s
+.PHONY : ClassroomAsignments.cpp.s
+
 ilpBasicSyntax.o: ilpBasicSyntax.cpp.o
 .PHONY : ilpBasicSyntax.o
 
@@ -235,9 +272,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... ClassroomAsignments"
 	@echo "... ilpBasicSyntax"
 	@echo "... knapsack"
 	@echo "... schoolProjectAllocation"
+	@echo "... ClassroomAsignments.o"
+	@echo "... ClassroomAsignments.i"
+	@echo "... ClassroomAsignments.s"
 	@echo "... ilpBasicSyntax.o"
 	@echo "... ilpBasicSyntax.i"
 	@echo "... ilpBasicSyntax.s"

@@ -104,4 +104,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ilpBasicSyntax.dir/DependInfo.cmake"
   "CMakeFiles/knapsack.dir/DependInfo.cmake"
   "CMakeFiles/schoolProjectAllocation.dir/DependInfo.cmake"
+  "CMakeFiles/ClassroomAsignments.dir/DependInfo.cmake"
   )
