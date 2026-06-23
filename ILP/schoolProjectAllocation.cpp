@@ -50,7 +50,7 @@ int main() {
     else if (response.status() == CpSolverStatus::FEASIBLE) {cout << "Feasible \n";}
     else {cout << "Infeasible \n";}
     
-    for (int i = 0; i < x.size(); i++) {
+    for (int i = 0; i < x.size(); i++ ) {
         cout << name[i] << ": ";
         for (const BoolVar& n : x[i]) {
             cout << SolutionBooleanValue(response, n) << " ";

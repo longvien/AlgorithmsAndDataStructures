@@ -49,20 +49,20 @@ int main() {
 
     CpSolverResponse response = Solve(model.Build());
     cout << "Status: ";
-    if (response.status() == CpSolverStatus::OPTIMAL) {cout << "Optimal\n";}
-    else if (response.status() == CpSolverStatus::FEASIBLE) {cout << "Feasible\n";}
-    else {cout << "Infeasible\n";}
+    if (response.status() == CpSolverStatus::OPTIMAL) {cout << "Optimal \n";}
+    else if (response.status() == CpSolverStatus::FEASIBLE) {cout << "Feasible \n";}
+    else {cout << "In feasible";}
 
     for (int j = 0; j < classN.size(); j++) {
         cout << classN[j] << ": ";
-        for (int i = 0 ; i < name.size(); i++) {
+        for (int i = 0; i < name.size(); i++) {
             if (SolutionBooleanValue(response, x[i][j]) == 1) {
                 cout << name[i] << " ";
             }
-        }
+        }    
         cout << "\n";
     }
 
-    cout << "Maximum Satisfaction Score: " << response.objective_value();
+    cout << "Maximum Preference: " << response.objective_value();
     return 0;
 }
