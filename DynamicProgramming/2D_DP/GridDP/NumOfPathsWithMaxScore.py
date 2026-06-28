@@ -35,3 +35,4 @@ class Solution:
                                 ways = (dp[r][c][1] + dp[oR][oC][1]) % 1000000007
                                 dp[r][c] = (dp[r][c][0], ways)
         return [dp[0][0][0], dp[0][0][1]]
+
