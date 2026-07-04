@@ -9,6 +9,7 @@ public:
         int m = matrix.size();
         int n = matrix[0].size();
         vector<vector<int>>dp(m, vector<int>(n, 0));
+        
         for (int r = 0; r < m; r++) {
             for (int c = 0; c < n; c++) {
                 if (r == 0 || c == 0) {
@@ -16,24 +17,26 @@ public:
                         dp[r][c] = 1;
                         maxSqr = max(maxSqr, dp[r][c]);
                     }
+                    continue;
                 }
-                else if (matrix[r][c] == '1' && matrix[r-1][c-1] == '1') {
-                    dp[r][c] = dp[r-1][c-1] + 1;
+                else if (matrix[r][c] == '1') {
+                    dp[r][c] = 1;
+                    maxSqr = max(maxSqr, dp[r][c]);
+                }
+                if (r != 0 && c != 0 && matrix[r][c] == '1' && matrix[r-1][c-1] == '1' && matrix[r-1][c] == '1' && matrix[r][c-1] == '1') {
+                    dp[r][c] = min({dp[r-1][c-1], dp[r][c-1], dp[r-1][c]}) + 1;
                     maxSqr = max(maxSqr, dp[r][c]);
                 }
             }
         }
-        return maxSqr;
+        return maxSqr * maxSqr;
     }
 };
 
 int main() {
     Solution mySolu = Solution();
     vector<vector<char>> n = {
-    {'1', '0', '1', '0', '0'},
-    {'1', '0', '1', '1', '1'},
-    {'1', '1', '1', '1', '1'},
-    {'1', '0', '0', '1', '0'}
+    {'0'}
 };
     cout << mySolu.maximalSquare(n);
 }
