@@ -18,6 +18,7 @@ class Solution:
                     dp[r][c] = min(dp[r-1][c-1], dp[r][c-1], dp[r-1][c]) + 1
                     maxSqr = max(maxSqr, dp[r][c])
         return maxSqr**2
-    
+
+
 mySolu = Solution()
 print(mySolu.maximalSquare([["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]))
