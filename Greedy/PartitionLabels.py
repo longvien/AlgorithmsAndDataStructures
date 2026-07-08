@@ -30,3 +30,5 @@ class Solution:
 
     def getKey(self, key):
         return key[0]
+
+
