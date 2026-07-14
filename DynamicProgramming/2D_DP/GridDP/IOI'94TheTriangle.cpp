@@ -1,11 +1,14 @@
 #include<bits/stdc++.h>
-
 using namespace std;
+#pragma GCC optimize("O3")
 
 int main() {
-    int dis;
-    cin >> dis;
-    return dis/5 + dis%5;
+    ios::sync_with_stdio(false);
+    cin.tine(nullptr);
+
+
+
+    return 0;
 }
 
 
