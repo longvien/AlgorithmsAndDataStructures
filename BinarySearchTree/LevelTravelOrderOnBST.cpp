@@ -33,7 +33,7 @@ public:
                         if (queue.empty()) {
                             queue.push_back({});
                             queue2.push_back({});
-                        }
+                        }14s
                         queue[0].push_back(i->left->val);
                         queue2[0].push_back(i->left);
                     }
@@ -45,7 +45,6 @@ public:
                         queue[0].push_back(i->right->val);
                         queue2[0].push_back(i->right);
                     }
-
                 }
             }
 

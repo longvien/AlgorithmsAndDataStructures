@@ -16,13 +16,14 @@ vector<bool> SegmentedSieve(ll l , ll r) {
         }
     }
     vector<ll> prime;
-    for (ll i = 2; i < limit+2; i++) {
+    for (ll i = 2; i < limit+1; i++) {
         if (arr[i]) {prime.PB(i);}
     }
     vector<bool> ans(r-l+1, true);
+    if (l == 1) {ans[0] = false;}
     for (ll i = 0; i < prime.size(); i++) {
         ll first_multiple = max(prime[i]*prime[i], ((l+prime[i]-1)/prime[i])*prime[i]);
-        for (ll j = first_multiple; j<r+1; j+=ans[i]) {
+        for (ll j = first_multiple; j<r+1; j+=prime[i]) {
             ans[j-l] = false;
         }
     }
