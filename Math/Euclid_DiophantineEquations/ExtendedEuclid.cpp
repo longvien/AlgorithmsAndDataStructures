@@ -35,5 +35,4 @@ int main() {
     cout << "x = " << ans.fi << ", y = " << ans.se << "\n";
     return 0; 
 }
-
 /*solve Bézout's Identity ( ax + by = gcd(a, b) ) with Extended Euclidean Algorithms. */
