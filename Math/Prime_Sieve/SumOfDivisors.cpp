@@ -33,6 +33,7 @@ ll SumOfDiv(ll n) {
     }
     return sum;
 }
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -42,3 +43,5 @@ int main() {
     cout << "Sum Of Divisors: "<< ans << "\n";
     return 0;
 }
+
+
