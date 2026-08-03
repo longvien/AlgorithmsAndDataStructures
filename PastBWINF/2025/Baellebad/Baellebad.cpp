@@ -3,7 +3,15 @@ using namespace std;
 //#pragma GCC optimize("O3")
 #define f(i,a,n) for (int i = a; i<n; i++)
 
-vector<auto> solve() {
+
+struct BallData {
+    string date;
+    unordered_set<int> time;
+    int ball;
+
+};
+
+BallData solve() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     
@@ -16,20 +24,23 @@ vector<auto> solve() {
 
     unordered_map<string, unordered_map<int, int>> m;
     vector<string> daysIW = {"Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"};
+    
     f(i,0,daysIW.size()) {
         m[daysIW[i]] = unordered_map<int, int>();
     }
 
     f(i,0,t) {
+        
         string classN, currD;
         int start, end, need;
+        
         cin >> classN >> currD >> start >> end >> need;
         
         f(j,start,end+1) {
-            m[currD][j] = (m[currD].find(j) == 0)? need : m[currD][j] + need;
+            m[currD][j] = (m[currD].count(j) == 0)? need : m[currD][j] + need;
             if (m[currD][j] > maxBall) {
                 if (currD == date) {
-                    if (time.find(j) == 0) {
+                    if (time.count(j) == 0) {
                         time.insert(j);
                     }
                 }
@@ -42,16 +53,12 @@ vector<auto> solve() {
         }
 
     }
-    vector<auto> ans;
-    ans.push_back(date);
-    ans.push_back(time);
-    ans.push_back(maxBall);
     
-    return ans;
+    return {date, time, maxBall};
 }
 
 int main() {
-    vector<auto> ans = solve();
+    BallData ans = solve();
     cout << "Man braucht am " << ans[0] << " um"
     for (i,0,ans[1].size()) {
         cout << ans[1][i];
