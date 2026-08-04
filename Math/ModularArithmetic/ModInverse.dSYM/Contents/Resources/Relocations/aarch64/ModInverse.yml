@@ -1,0 +1,17 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/qvien/lvien/DataStructuresAndAlgorithms/Math/ModularArithmetic/ModInverse'
+relocations:
+  - { offset: 0x15EB9, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x61DA7, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0x160E0, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_ModInverse.cpp, symObjAddr: 0x510, symBinAddr: 0x100000BCC, symSize: 0x14 }
+  - { offset: 0x160F7, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x4D4, symBinAddr: 0x100000B90, symSize: 0x3C }
+  - { offset: 0x1610E, size: 0x8, addend: 0x0, symName: __ZSt4sqrtIxEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES3_, symObjAddr: 0x4A4, symBinAddr: 0x100000B64, symSize: 0x2C }
+  - { offset: 0x16146, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x45C, symBinAddr: 0x100000B1C, symSize: 0x48 }
+  - { offset: 0x16168, size: 0x8, addend: 0x0, symName: __Z10ModInversexxx, symObjAddr: 0x320, symBinAddr: 0x1000009E0, symSize: 0x13C }
+  - { offset: 0x161B8, size: 0x8, addend: 0x0, symName: __Z9ExtEuclidxx, symObjAddr: 0x228, symBinAddr: 0x1000008E8, symSize: 0xF8 }
+  - { offset: 0x16273, size: 0x8, addend: 0x0, symName: __Z7fastPowxxx, symObjAddr: 0xE8, symBinAddr: 0x1000007A8, symSize: 0x140 }
+  - { offset: 0x162D2, size: 0x8, addend: 0x0, symName: __Z3gcdxx, symObjAddr: 0x80, symBinAddr: 0x100000740, symSize: 0x68 }
+  - { offset: 0x16313, size: 0x8, addend: 0x0, symName: __Z7isPrimex, symObjAddr: 0x0, symBinAddr: 0x1000006C0, symSize: 0x80 }
+  - { offset: 0x16370, size: 0x8, addend: 0x0, symName: ___modti3, symObjAddr: 0x0, symBinAddr: 0x100000BE0, symSize: 0x380 }
+  - { offset: 0x164B8, size: 0x8, addend: 0x0, symName: ___modti3, symObjAddr: 0x0, symBinAddr: 0x100000BE0, symSize: 0x380 }
+...
