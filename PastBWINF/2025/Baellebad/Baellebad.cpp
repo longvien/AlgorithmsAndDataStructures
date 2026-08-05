@@ -1,17 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-//#pragma GCC optimize("O3")
+#pragma GCC optimize("O3")
 #define f(i,a,n) for (int i = a; i<n; i++)
 
-
-struct BallData {
-    string date;
-    unordered_set<int> time;
-    int ball;
-
+struct ANS {
+    string day;
+    unordered_set<int> times;
+    int ballN;
 };
 
-BallData solve() {
+ANS solve() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     
@@ -35,6 +33,7 @@ BallData solve() {
         int start, end, need;
         
         cin >> classN >> currD >> start >> end >> need;
+        end--;
         
         f(j,start,end+1) {
             m[currD][j] = (m[currD].count(j) == 0)? need : m[currD][j] + need;
@@ -53,18 +52,25 @@ BallData solve() {
         }
 
     }
-    
-    return {date, time, maxBall};
+    ANS ans;
+    ans.day = date;
+    ans.times = time;
+    ans.ballN = maxBall;                            
+    return ans;
 }
 
 int main() {
-    BallData ans = solve();
-    cout << "Man braucht am " << ans[0] << " um"
-    for (i,0,ans[1].size()) {
-        cout << ans[1][i];
-        if (i < ans[1].size()-1) { cout << ", ";}
+    ANS ans = solve();
+    cout << "Man braucht maximal am " << ans.day << " um ";
+    bool first = true;
+    for (const auto& t:ans.times) {
+        if (!first) {
+            cout << ", ";
+        }
+        cout << t;
+        first = false;
     }
-
-    cout << " mit eine Anzahl von Bällen: " << ans[3] << "\n";
+    cout << " Uhr";
+    cout << " mit eine Anzahl von Bällen: " << ans.ballN << "\n";
     return 0;
 }
