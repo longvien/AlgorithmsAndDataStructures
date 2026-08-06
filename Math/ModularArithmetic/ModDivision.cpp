@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+#pragma GCC optimize("O3")
 typedef long long ll;
 
 bool isPrime(ll n) {
-    for (int i = 2; i < (ll)sqrt(n)+1; i++) {
+    if (n<2) {return false;}
+    for (int i = 2; i*i < (ll)sqrt(n)+1; i++) {
         if (n%i == 0) {
             return false;
         }
@@ -28,7 +30,14 @@ ll fastPow(ll a, ll p, ll m) {
     return ans;
 }
 
-// find x which (ax) mod m = 1 ; ax = mq + 1; ax - mq = 1; ax + my(-q) = 1 (gcd(a,m))
+/* Find x which (ax) mod m = 1 ; 
+ax = mq + 1 
+ax - mq = 1
+ax + my(-q) = 1 
+g = (gcd(a,m))
+a | g; m | g = > ax + my | g
+ax + my = 1 and only 1|1 => gcd(a,m) = 1. Equations: ax + my = 1
+*/
 ll ExtEuclid(ll a, ll b) {
     ll x1 = 1, x2 = 0, x3 = 0;
     ll y1 = 0, y2 = 1, y3 = 0;
@@ -46,20 +55,23 @@ ll ExtEuclid(ll a, ll b) {
         q = a/b;
         r = a-q*b;
     }
-    return (x2 > -1)? x2: x2+;
+    return x2;
 }
 
 ll ModDiv(ll a, ll b, ll m) {
     if (gcd(b, m) != 1) {
-        if (a%b != 0) { return -1; }
+        if (a%b != 0) { return -1; } // 
         return (a/b)%m;
     }
 
     if (isPrime(m)) {
-        return ((a%m) * (fastPow(b, m-2, m)))%m;
+        return ((__int128)(a%m) * (fastPow(b, m-2, m)))%m; // Fermat's Little Theorem
     }
-    return ((a%m) * ExtEuclid(b, m))%m; 
+    ll inverse = ExtEuclid(b, m);
+    inverse = (inverse%m +m)%m;
+    return ((__int128)(a%m)*inverse)%m; 
 }
+
 
 int main() {
     ios::sync_with_stdio(false);
