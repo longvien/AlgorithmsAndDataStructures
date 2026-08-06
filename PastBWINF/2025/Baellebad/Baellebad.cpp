@@ -8,40 +8,29 @@ struct ANS {
     unordered_set<int> times;
     int ballN;
 };
-
 ANS solve() {
     ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    
+    cin.tie(nullptr);  
     int t;
     cin >> t;
-    
     string date;
     unordered_set<int> time;
     int maxBall = 0;
-
     unordered_map<string, unordered_map<int, int>> m;
     vector<string> daysIW = {"Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"};
-    
     f(i,0,daysIW.size()) {
         m[daysIW[i]] = unordered_map<int, int>();
     }
-
-    f(i,0,t) {
-        
+    f(i,0,t) {   
         string classN, currD;
-        int start, end, need;
-        
+        int start, end, need;   
         cin >> classN >> currD >> start >> end >> need;
         end--;
-        
         f(j,start,end+1) {
             m[currD][j] = (m[currD].count(j) == 0)? need : m[currD][j] + need;
             if (m[currD][j] > maxBall) {
                 if (currD == date) {
-                    if (time.count(j) == 0) {
-                        time.insert(j);
-                    }
+                    if (time.count(j) == 0) { time.insert(j); }
                 }
                 if (currD != date) {
                     date = currD;
@@ -64,9 +53,7 @@ int main() {
     cout << "Man braucht maximal am " << ans.day << " um ";
     bool first = true;
     for (const auto& t:ans.times) {
-        if (!first) {
-            cout << ", ";
-        }
+        if (!first) { cout << ", "; }
         cout << t;
         first = false;
     }
