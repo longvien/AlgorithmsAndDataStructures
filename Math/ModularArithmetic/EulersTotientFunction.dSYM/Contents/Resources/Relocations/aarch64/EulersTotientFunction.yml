@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/qvien/lvien/DataStructuresAndAlgorithms/Math/ModularArithmetic/EulersTotientFunction'
+relocations:
+  - { offset: 0x15E9B, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x616C8, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0x160C2, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_EulersTotientFunction.cpp, symObjAddr: 0x1C8, symBinAddr: 0x100000868, symSize: 0x14 }
+  - { offset: 0x160D9, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x18C, symBinAddr: 0x10000082C, symSize: 0x3C }
+  - { offset: 0x160F7, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x138, symBinAddr: 0x1000007E0, symSize: 0x4C }
+  - { offset: 0x16129, size: 0x8, addend: 0x0, symName: __Z3phix, symObjAddr: 0x30, symBinAddr: 0x1000006D8, symSize: 0x108 }
+  - { offset: 0x16195, size: 0x8, addend: 0x0, symName: __ZN6FastIO4initEv, symObjAddr: 0x0, symBinAddr: 0x1000006A8, symSize: 0x30 }
+...
