@@ -35,7 +35,7 @@ ll extendedEuclid(ll a, ll b, ll m) {
 }
 
 ll CRT(vpair<ll> in, ll M) {
-    ll ans = 0;
+    ll ans = 0; // x = k ∑ i=1 aiMi((x^-1)mod mi)
     for (auto& [r, m] : in) {
         ll currX = M/m;
         currX = ((__int128)currX*(r%M))%M;
