@@ -61,3 +61,6 @@ int main() {
     cout << " mit eine Anzahl von Bällen: " << ans.ballN << "\n";
     return 0;
 }
+
+
+
