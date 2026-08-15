@@ -22,21 +22,22 @@ ll modpow(ll a, ll b, ll m) {
         a = ((__int128)a*a)%m;
         b>>=1;
     }
-    return ans;
+    return ans; 
 }
 
 void solve(vector<pair<ll, ll>> q, ll lg) {
-    vector<ll> fact(lg+1, 0);
-    vector<ll> invfact(lg+1, 0);
-    for (ll i=1; i< q.size(); i++) {
-        fact[i] = (fact[i-1]*i%MOD)%MOD;
+    vector<ll> fact(lg+1, 1);
+    vector<ll> invfact(lg+1, 1);
+    for (ll i=1; i<fact.size(); i++) {
+        fact[i] = ((__int128)fact[i-1]*i%MOD)%MOD; 
     }
-    invfact[lg] = modpow(lg, MOD-2, MOD);
+    invfact[lg] = modpow(fact[lg], MOD-2, MOD);
     for (ll i = lg-1; i>=0; i--) {
-        invfact[i] = (invfact[i+1]*i+1%MOD)%MOD;
+        invfact[i] = ((__int128)invfact[i+1]*(i+1))%MOD;
     } 
     for (auto& [n, k] : q) {
-        cout << "C(" << n << ", " << k << ") = " << fact[n] * invfact[k] * invfact[n-k] << "\n"; 
+        ll ans = ((__int128)((__int128)fact[n]%MOD * invfact[k]%MOD)%MOD * invfact[n-k]%MOD)%MOD; // (a*b*c)modm = ((amodm * bmodm)modm * cmodm) modm 
+        cout << "C(" << n << ", " << k << ") = " << ans << "\n"; 
     }
 }
 
