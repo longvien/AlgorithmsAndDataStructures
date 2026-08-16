@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
+using ll = signed long long;
 #pragma GCC optimize("O3")
 
 namespace FastIO {
@@ -40,11 +40,17 @@ unordered_map<ll, ll> pF(ll a) {
     return ans;
 }
 
-void solve(unordered_map<ll, ll> pM, unordered_map<ll, ll> qM, ll p) {
+void solve(unordered_map<ll, ll> qM, ll p) {
     ll ans = 0;
-    for (auto& [n, e] : pM) {
-        if (qM.count(n) != 0) {
-            ans = max(ans, p/fastPow(n, pM[n]-qM[n]+1));
+    for (auto& [n, e] : qM) {
+        ll curr = p;
+        if (curr%n==0) {
+            int count = 0;
+            while (curr%n==0) {
+                count++;
+                curr/=n;
+            }
+            ans = max({ans, p/fastPow(n, count-e+1)});
         }
     }
     cout << ans << "\n";
@@ -61,10 +67,12 @@ signed main() {
             cout << p << "\n";
         }
         else {
-            unordered_map<ll, ll> pM = pF(p);
             unordered_map<ll, ll> qM = pF(q);
-            solve(pM, qM, p);
+            solve(qM, p);
         }
     }
     return 0;
 }
+
+/*Key Idea: Break q down into Prime Factors to find out the greastest x which p mod x = 0 and x mod q != 0 by counting,
+and dividing p with minium amount of prime factors*/
