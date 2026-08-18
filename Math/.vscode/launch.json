@@ -1,17 +1,18 @@
 {
+    "version": "0.2.0",
     "configurations": [
         {
-            "name": "(lldb) Launch",
+            "name": "(lldb) Launch Current File",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb"
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: clang++ build active file"
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
