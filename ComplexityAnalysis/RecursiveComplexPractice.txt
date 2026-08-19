@@ -1,0 +1,90 @@
+Algo:
+void f(int n) {
+	if(i<=1) {return;}
+	f(n/2);
+	f(n/2);
+}
+Proof:
+The recursive call for the function are:
+
+1 + 2 + 4 + 8 + … + 2^logn because the recursive call just keep being double until a depth which n <= 1. And since we are dividing by 2, we need to operate k times, in which 2^k = n which is log n times. Since each time the recursion calls double it self each time, we will have an geometric series of : 1 + 2 + 4 + 8 + .. + n, (n2 - 1/ 2-1) = (2n - 1) Because constant values does not affect the asymptotic complexity growth, we have a linear runtime of O(n)
+
+Since for each n, n is being called in the recursive stack by divide it self until 1, the maximum depth of recursive stack must be log2(n) => we have a auxiliary space complexity of O(log n).
+
+Algo:
+void f(int n) {
+if(n<=1) {return;}
+	f(n/f);
+}
+
+Proof:
+T(n)=T(n/f)+1
+
+T(n/f) = T(n/f^2) + 1
+
+T(n) = T(n/f^2)+2
+
+T(n) = T(n/f^3) + 3
+
+… 
+T(n) = T(n/f^logf(n)) + logf(n)
+=> T(1) + O(logf(n)) = O(log n)
+
+Algo:
+void f(int n) {
+	If (n<=1) {return;}
+	f(n/2);
+	f(n/2);
+}
+Proof:
+T(n) = 2T(n/2) + O(1)
+T(n/2) = 2T(n/4) + O(1)
+T(n) = 4T(n/4) + 2
+T(n/4) = 2T(n/8)+1
+T(n) = 8T(n/8) + 3
+
+
+=>  T(n) = 2T(n/k) + 1
+      T(n) = 4T(n/k^2) + 2
+
+    => T(n) = 2^logk(n)T(n/k^logk(n)) +logk((n))
+=> 
+Since n / k^logk(n) = 1
+=> T(n) = O(n)*T(1) + logk(n) = O(n) + O(log n) = O(n)
+
+Algo:
+void f(int n ) {
+	if (n<=1) {return;}
+for(int i = 0; i < n; i++) {cout << n << “\n”; }
+f(n/2);
+f(n/2); 
+}
+Proof:
+T(n) = 2T(n/2) + n
+T(n/2) = 2T(n/4) + n/2
+T(n) = 4T(n/4) + 2n
+
+…
+T(n) = 2^log2(n)T(n/2^log2(n)) + log2(n)*n
+T(n) = O(n) * T(1) + O(nlogn) = O(nlogn)
+
+
+Algo:
+
+void f(int n) {
+	if (n <=1 ) {return;}
+	for (int i = 0; i < n; i++) {
+	for (int j = 0; j < n; j++) {
+		cout << “Hello World \n”;
+}
+}
+f(n/2);
+f(n/2);
+}
+
+T(n) = 2T(n/2) + n^2 + 1
+
+T(n/2) = 2T(n/4)+(n/2)^2 +1 =  2T(n/4)+(n^2/4) +1
+
+T(n) = 4T(n/4)+5n^2/4 + 2
+
