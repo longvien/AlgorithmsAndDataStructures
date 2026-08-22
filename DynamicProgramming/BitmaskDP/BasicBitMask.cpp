@@ -21,8 +21,16 @@ signed main() {
     cout << x << "\n";
     x^=(mask<<i+2); // flip bit i+1 of x
     cout << x << "\n";
-    x&~(mask<<i+3); // clear bit i+3 of x
+    x&=~(mask<<i+3); // clear bit i+3 of x
     cout << x << "\n";
     cout << "The number of bit 1 in " << popCount << " is " << __builtin_popcount(popCount) << "\n";
     return 0;
 }
+
+
+
+
+
+
+
+
