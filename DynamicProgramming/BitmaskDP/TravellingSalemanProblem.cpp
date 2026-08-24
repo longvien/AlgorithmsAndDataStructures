@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-//#pragma GCC optimize("O3")
+#pragma GCC optimize("O3")
 #define fi first
 #define se second
 template <typename T>
