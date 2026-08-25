@@ -28,7 +28,7 @@ int solve (const vector<vector<int>>& cost, vector<char>& cities, int& indexStar
     matrix<int> dp(p, vector<int>(numOCities, numeric_limits<int>::max()));
     dp[(1<<indexStartCity)][indexStartCity] = 0;
     for (int mask=(1<<indexStartCity); mask<(1<<numOCities); mask++) {
-        if (!(mask&(1<<indexStartCity))) continue;
+        if (!(mask&(1<<indexStartCity))) continue; // Reachability
         for (int curr=0; curr<numOCities; curr++) {
             if (mask&(1<<curr) && (dp[mask][curr] != numeric_limits<int>::max())) {
                 for (int next=0; next<numOCities; next++) {
