@@ -71,3 +71,5 @@ signed main() {
     cout << solve(graph, cities, indexStartCity) << "\n";
     return 0;
 }
+
+
