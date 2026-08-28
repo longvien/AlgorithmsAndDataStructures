@@ -11,5 +11,6 @@ namespace FastIO {
 
 signed main() {
     FastIO::init();
-    return 0;
+	
+	return 0;
 }
