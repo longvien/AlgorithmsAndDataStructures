@@ -97,4 +97,8 @@ signed main() {
     bool drehfreudig = CheckIfDrehfreudig(LeafNodesDivFactor);
     cout << ((drehfreudig)? "Drehfreudig" : "Nicht Drehfreudig") << "\n";
     return 0;
+    for 
 }
+
+
+
