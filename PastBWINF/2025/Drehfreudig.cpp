@@ -98,10 +98,3 @@ signed main() {
     cout << ((drehfreudig)? "Drehfreudig" : "Nicht Drehfreudig") << "\n";
     return 0;
 }
-
-
-
-
-
-
-
