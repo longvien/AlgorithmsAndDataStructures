@@ -10,8 +10,7 @@ class DSU {
         parent = vector<int>(x,0);
         rank = vector<int>(x, 0);
     }
-    
-    
+
 
     void union() {
 
