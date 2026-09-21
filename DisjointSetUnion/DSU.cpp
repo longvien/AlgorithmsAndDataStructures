@@ -17,7 +17,6 @@ class DSU {
     }
     
 }
-
 signed main() {
     return 0;
 }
