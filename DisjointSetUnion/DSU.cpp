@@ -11,16 +11,17 @@ class DSU {
         rank = vector<int>(x, 0);
     }
 
-
-
-
-    
     void union() {
-
+        
     }
     
 }
+
 signed main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    DSU ob1 = DSU();
+
     return 0;
 }
 
