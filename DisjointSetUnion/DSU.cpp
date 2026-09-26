@@ -13,11 +13,7 @@ class DSU {
 
     void union() {
         
-    }
-    
-
-
-    
+    }   
 }
 
 signed main() {
