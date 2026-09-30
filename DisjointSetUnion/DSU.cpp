@@ -19,7 +19,7 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     DSU ob1 = DSU();
-
+    DSU ob2 = DSU();
     return 0;
 }
 
