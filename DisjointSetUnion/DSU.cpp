@@ -16,8 +16,6 @@ class DSU {
     }   
 }
 
-
-
 signed main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -25,24 +23,3 @@ signed main() {
     DSU ob2 = DSU();
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
