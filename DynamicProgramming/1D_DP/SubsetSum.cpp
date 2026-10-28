@@ -1,4 +1,4 @@
-#pragma GCC optimize("03")
+#pragma GCC optimize("O3")
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -28,3 +28,5 @@ signed main() {
     cout << dp[v] << "\n";
     return 0;
 }
+
+

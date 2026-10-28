@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/Users/qvien/lvien/DataStructuresAndAlgorithms/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin25-g++-15 -DOR_PROTO_DLL=\"\" -DUSE_BOP -DUSE_CBC -DUSE_CLP -DUSE_GLOP -DUSE_HIGHS -DUSE_MATH_OPT -DUSE_PDLP -DUSE_SCIP -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/cbc/2.10.13/include/cbc/coin -isystem /opt/homebrew/Cellar/cgl/0.60.10/include/cgl/coin -isystem /opt/homebrew/Cellar/clp/1.17.11/include/clp/coin -isystem /opt/homebrew/Cellar/osi/0.108.12/include/osi/coin -isystem /opt/homebrew/Cellar/coinutils/2.11.13/include/coinutils/coin -isystem /opt/homebrew/include/highs -isystem /opt/homebrew/include/eigen3 -g -std=gnu++17 -arch arm64 -fPIE -fwrapv -Wno-range-loop-construct -Wno-sign-compare -Wno-invalid-offsetof -o CMakeFiles/ilpBasicSyntax.dir/ilpBasicSyntax.cpp.o -c /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/ilpBasicSyntax.cpp",
+  "file": "/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/ilpBasicSyntax.cpp",
+  "output": "CMakeFiles/ilpBasicSyntax.dir/ilpBasicSyntax.cpp.o"
+},
+{
+  "directory": "/Users/qvien/lvien/DataStructuresAndAlgorithms/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin25-g++-15 -DOR_PROTO_DLL=\"\" -DUSE_BOP -DUSE_CBC -DUSE_CLP -DUSE_GLOP -DUSE_HIGHS -DUSE_MATH_OPT -DUSE_PDLP -DUSE_SCIP -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/cbc/2.10.13/include/cbc/coin -isystem /opt/homebrew/Cellar/cgl/0.60.10/include/cgl/coin -isystem /opt/homebrew/Cellar/clp/1.17.11/include/clp/coin -isystem /opt/homebrew/Cellar/osi/0.108.12/include/osi/coin -isystem /opt/homebrew/Cellar/coinutils/2.11.13/include/coinutils/coin -isystem /opt/homebrew/include/highs -isystem /opt/homebrew/include/eigen3 -g -std=gnu++17 -arch arm64 -fPIE -fwrapv -Wno-range-loop-construct -Wno-sign-compare -Wno-invalid-offsetof -o CMakeFiles/knapsack.dir/knapsack.cpp.o -c /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/knapsack.cpp",
+  "file": "/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/knapsack.cpp",
+  "output": "CMakeFiles/knapsack.dir/knapsack.cpp.o"
+},
+{
+  "directory": "/Users/qvien/lvien/DataStructuresAndAlgorithms/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin25-g++-15 -DOR_PROTO_DLL=\"\" -DUSE_BOP -DUSE_CBC -DUSE_CLP -DUSE_GLOP -DUSE_HIGHS -DUSE_MATH_OPT -DUSE_PDLP -DUSE_SCIP -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/cbc/2.10.13/include/cbc/coin -isystem /opt/homebrew/Cellar/cgl/0.60.10/include/cgl/coin -isystem /opt/homebrew/Cellar/clp/1.17.11/include/clp/coin -isystem /opt/homebrew/Cellar/osi/0.108.12/include/osi/coin -isystem /opt/homebrew/Cellar/coinutils/2.11.13/include/coinutils/coin -isystem /opt/homebrew/include/highs -isystem /opt/homebrew/include/eigen3 -g -std=gnu++17 -arch arm64 -fPIE -fwrapv -Wno-range-loop-construct -Wno-sign-compare -Wno-invalid-offsetof -o CMakeFiles/schoolProjectAllocation.dir/schoolProjectAllocation.cpp.o -c /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/schoolProjectAllocation.cpp",
+  "file": "/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/schoolProjectAllocation.cpp",
+  "output": "CMakeFiles/schoolProjectAllocation.dir/schoolProjectAllocation.cpp.o"
+},
+{
+  "directory": "/Users/qvien/lvien/DataStructuresAndAlgorithms/build",
+  "command": "/opt/homebrew/bin/aarch64-apple-darwin25-g++-15 -DOR_PROTO_DLL=\"\" -DUSE_BOP -DUSE_CBC -DUSE_CLP -DUSE_GLOP -DUSE_HIGHS -DUSE_MATH_OPT -DUSE_PDLP -DUSE_SCIP -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/cbc/2.10.13/include/cbc/coin -isystem /opt/homebrew/Cellar/cgl/0.60.10/include/cgl/coin -isystem /opt/homebrew/Cellar/clp/1.17.11/include/clp/coin -isystem /opt/homebrew/Cellar/osi/0.108.12/include/osi/coin -isystem /opt/homebrew/Cellar/coinutils/2.11.13/include/coinutils/coin -isystem /opt/homebrew/include/highs -isystem /opt/homebrew/include/eigen3 -g -std=gnu++17 -arch arm64 -fPIE -fwrapv -Wno-range-loop-construct -Wno-sign-compare -Wno-invalid-offsetof -o CMakeFiles/ClassroomAsignments.dir/ClassroomAsignments.cpp.o -c /Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/ClassroomAsignments.cpp",
+  "file": "/Users/qvien/lvien/DataStructuresAndAlgorithms/ILP/ClassroomAsignments.cpp",
+  "output": "CMakeFiles/ClassroomAsignments.dir/ClassroomAsignments.cpp.o"
+}
+]
