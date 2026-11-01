@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "ClassroomAsignments"
+			"path" : "knapsack"
 		}
 	],
 	"backtrace" : 1,
@@ -20,8 +20,8 @@
 			"set_property",
 			"_pkg_create_imp_target",
 			"_pkg_recalculate",
-			"_pkg_check_modules_internal",
-			"pkg_check_modules"
+			"pkg_check_modules",
+			"_pkg_check_modules_internal"
 		],
 		"files" : 
 		[
@@ -45,13 +45,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 18,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 19,
+				"line" : 12,
 				"parent" : 0
 			},
 			{
@@ -345,64 +345,58 @@
 				"parent" : 51
 			},
 			{
-				"command" : 11,
+				"command" : 10,
 				"file" : 7,
 				"line" : 60,
 				"parent" : 52
 			},
 			{
-				"command" : 10,
-				"file" : 6,
-				"line" : 1166,
-				"parent" : 53
-			},
-			{
 				"command" : 9,
 				"file" : 6,
-				"line" : 1149,
-				"parent" : 54
+				"line" : 1174,
+				"parent" : 53
 			},
 			{
 				"command" : 8,
 				"file" : 6,
 				"line" : 813,
-				"parent" : 55
+				"parent" : 54
 			},
 			{
 				"command" : 7,
 				"file" : 6,
 				"line" : 794,
-				"parent" : 56
+				"parent" : 55
 			},
 			{
-				"command" : 11,
+				"command" : 10,
 				"file" : 7,
 				"line" : 54,
 				"parent" : 52
 			},
 			{
-				"command" : 10,
+				"command" : 11,
 				"file" : 6,
 				"line" : 1166,
-				"parent" : 58
+				"parent" : 57
 			},
 			{
 				"command" : 9,
 				"file" : 6,
 				"line" : 1149,
-				"parent" : 59
+				"parent" : 58
 			},
 			{
 				"command" : 8,
 				"file" : 6,
 				"line" : 813,
-				"parent" : 60
+				"parent" : 59
 			},
 			{
 				"command" : 7,
 				"file" : 6,
 				"line" : 794,
-				"parent" : 61
+				"parent" : 60
 			},
 			{
 				"command" : 6,
@@ -414,43 +408,43 @@
 				"command" : 5,
 				"file" : 5,
 				"line" : 125,
-				"parent" : 63
+				"parent" : 62
 			},
 			{
 				"command" : 4,
 				"file" : 5,
 				"line" : 93,
-				"parent" : 64
+				"parent" : 63
 			},
 			{
 				"file" : 10,
-				"parent" : 65
+				"parent" : 64
 			},
 			{
 				"command" : 4,
 				"file" : 10,
 				"line" : 44,
-				"parent" : 66
+				"parent" : 65
 			},
 			{
 				"file" : 9,
-				"parent" : 67
+				"parent" : 66
 			},
 			{
 				"command" : 3,
 				"file" : 9,
 				"line" : 2,
-				"parent" : 68
+				"parent" : 67
 			},
 			{
 				"file" : 8,
-				"parent" : 69
+				"parent" : 68
 			},
 			{
 				"command" : 2,
 				"file" : 8,
 				"line" : 68,
-				"parent" : 70
+				"parent" : 69
 			}
 		]
 	},
@@ -590,7 +584,7 @@
 			]
 		}
 	],
-	"id" : "ClassroomAsignments::@6890427a1f51a3e7e1df",
+	"id" : "knapsack::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -1048,72 +1042,72 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 57,
+				"backtrace" : 56,
 				"fragment" : "/opt/homebrew/Cellar/cbc/2.10.13/lib/libOsiCbc.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/opt/homebrew/Cellar/cbc/2.10.13/lib/libCbcSolver.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/opt/homebrew/Cellar/cbc/2.10.13/lib/libCbc.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libpthread.tbd",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/opt/homebrew/Cellar/cgl/0.60.10/lib/libCgl.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/opt/homebrew/Cellar/clp/1.17.11/lib/libOsiClp.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/opt/homebrew/Cellar/clp/1.17.11/lib/libClpSolver.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/opt/homebrew/Cellar/clp/1.17.11/lib/libClp.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/opt/homebrew/Cellar/osi/0.108.12/lib/libOsi.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/opt/homebrew/Cellar/coinutils/2.11.13/lib/libCoinUtils.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libbz2.tbd",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libz.tbd",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/opt/homebrew/opt/openblas/lib/libopenblas.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 62,
+				"backtrace" : 61,
 				"fragment" : "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libm.tbd",
 				"role" : "libraries"
 			},
@@ -1128,17 +1122,17 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 71,
+				"backtrace" : 70,
 				"fragment" : "/opt/homebrew/lib/libgmp.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 71,
+				"backtrace" : 70,
 				"fragment" : "/opt/homebrew/lib/libgmpxx.dylib",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 71,
+				"backtrace" : 70,
 				"fragment" : "/opt/homebrew/lib/libmpfr.dylib",
 				"role" : "libraries"
 			}
@@ -1152,8 +1146,8 @@
 			"id" : "ortools::ortools::@6890427a1f51a3e7e1df"
 		}
 	],
-	"name" : "ClassroomAsignments",
-	"nameOnDisk" : "ClassroomAsignments",
+	"name" : "knapsack",
+	"nameOnDisk" : "knapsack",
 	"paths" : 
 	{
 		"build" : ".",
@@ -1174,7 +1168,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "ClassroomAsignments.cpp",
+			"path" : "knapsack.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
