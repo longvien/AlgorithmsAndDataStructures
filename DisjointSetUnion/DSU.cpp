@@ -9,31 +9,45 @@ struct ANS {
 
 class DSU {
     public:
-    vector<int> parent, size;
+    vector<int> pr, sz;
     
-    DSU(int x) {
-        for (int i = 0; i < x; i++) {
-            parent.push_back(i);
-            size.push_back(1);
+    DSU(int n) {
+        pr = vector<int>(n);
+        sz = vector<int>(n, 1);
+        for (int i = 0; i < n; i++) pr[i] = i;
+    }
+    int find(int x) { // find + path compr
+        if (pr[x]==x) return x;
+        return pr[x] = find(pr[x]);
+    }
+    void unite(int a, int b) { // union by size
+        int pA = find(a), pB = find(b);
+        if (pA==pB) return;
+        if (sz[pA] > sz[pB]) {
+            pr[pB] = pA;
+            sz[pB] += sz[pA];
+        } else {
+            pr[pA] = pB;
+            sz[pA] += sz[pB];
         }
     }
     
-    int find(int x) {
-        if (parent[x] == x) return parent[x];
-        return parent[x] = find(parent[x]);
+    vector<tuple<int, int, int>> Kruskal(vector<tuple<int, int, int>>) {
+        
     }
-
-    void join(int a, int b) {
-        int rootA = find(a);
-        int rootB = find(b);
-        if (size[rootA] < size[rootB]) {
-            parent[rootA] = rootB; 
-            size[rootB]+=size[rootA]; 
-        }
-        else { 
-            parent[rootB] = rootA; size[rootA] += size[rootB]; 
-        }
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     ANS Kruskal(vector<tuple<int, int, int>> edges) {
         for (auto [a,b,c] : edges) {
