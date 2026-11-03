@@ -33,7 +33,7 @@ class DSU {
     }
     
     vector<tuple<int, int, int>> Kruskal(vector<tuple<int, int, int>>) {
-        
+
     }
     
     
@@ -62,7 +62,7 @@ class DSU {
             if (pA==pB) continue;
             join (pA, pB);
             ans.emplace_back(a,b,c);
-            cost += c;
+            cost += c
         }
         ANS n;
         n.cost = cost;
