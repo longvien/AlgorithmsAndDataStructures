@@ -19,7 +19,6 @@ class BIT {
         }
     }
     int p = (int)arr.size();
-
     int prefSum(int i) {
         i++;
         int count = 0;
@@ -66,4 +65,4 @@ class BIT {
         return 0;
     }
  
-}[]
+}
