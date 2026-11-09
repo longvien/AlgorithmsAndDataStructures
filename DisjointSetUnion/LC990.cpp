@@ -48,3 +48,5 @@ signed main() {
     vector<string> s = {"a==b","b!=a"};
     cout << n.equationsPossible(s) << "\n";
 }
+
+
