@@ -1,70 +1,80 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class BIT {
-    public:
-    vector<int> arr, bit, diff;
-    BIT(vector<int> n) {
-        int p = (int)n.size();
-        arr = n;
-        diff = vector<int>(p); bit = vector<int>(p);
-        diff[0] = bit[0];
-        for (int i = 0; i < p; i++) {
-            for(int j = i+1; j <= p; j += j&-j) {
-                bit[j-1] += arr[i];
-            }
-        }
-        for (int i = 1; i < p; i++) {
-            diff[i] = arr[i]-arr[i-1];
+// The Standard Fenwick Tree
+struct StandardBIT {
+    int n;
+    vecotor<int> bit;
+    StandardBIT(int n) {
+        this->n = n;
+        bit = vector<int>(n+1, 0);
+    }
+    void update(int i , int delta) {
+        for (; i <= n; i += i & -i) {
+            bit[i] += delta;
         }
     }
-    int p = (int)arr.size();
-    int prefSum(int i) {
-        i++;
-        int count = 0;
-        for (; i >= 1; i -= i&-i) {
-            count += bit[i-1];
+    int preffixSumQuery(int i) {
+        int total = 0;
+        for (; i > 0; i -= i & -i) {
+            total += bit[i];
         }
-        return count;
+        return total;
     }
-    
     int rangeSum(int l, int r) {
-        r++; l++;
-        return prefSum(r) - prefSum(l-1);
+        return preffixSumQuery(r) - preffixSumQuery(l-1);
     }
-    
-    void pointUpdate(int i, int u) {
-        i++;
-        for (; i <= p; i += i&-i) {
-            bit[i-1] += u;
+};
+
+// Fenwick Tree with Range Update + Point Query possible. | One of the most useful BIT variation in CP!!!
+struct DifferenceBIT {
+    int n;
+    vector<int> diff;
+    DifferenceBIT(int n) {
+        this->n = n;
+        diff = vector<int>(n+1, 0);
+    }
+    void update(int i, int delta) {
+        for (; i <= n; i += i & -i) {
+            diff[i] += delta;        
         }
     }
-    
-    void rangeUpdate(int l , int r, int u) {
-        l++; r++;
-        diff[l-1] += u;
-        diff[r] -= u;
+    int pointQuery(int i) {
+        int total = 0;
+        for (; i > 0; i -= i&-i) {
+            total += diff[i];
+        }
+        return total;
+    }
+    void rangeUpdate(int l , int r, int delta) {
+        update(l, delta);
+        if (r+1 < n) {
+            update(r+1, -delta);
+        }
+    }
+};
+
+// Fenwick Tree with Range Update & Range Query | 2 BITs
+struct RangeQueryBIT {
+    int n;
+    vector<int> diff;
+    vector<int> bit;
+    RangeQueryBIT(int n) {
+        this->n = n;
+        diff = vector<int>(n+1, 0);
+        bit = vector<int>(n+1, 0);
+    }
+    void update(int i, int delta) {
+        for (; i <= n; i += i&-i) {
+            
+        }
     }
 
-    int pointQueryARangeUpdate(int i) {
-        int count = 0;
-        for(; i >= 0; i-- ) {
-            count += diff[i];
-        }
-        return count;
-    }
-    
-    int prefSumARangeUpdate(int i) {
-        for (int j = i; j>=0; j--) {
 
-        }
-    }
+ };
+
+
+signed main() {
     
-    int rangeSumARangeUpdate(int l, int r) {
-        for (i >= )
-        return 0;
-    }
- 
+    return 0;
 }
-
-
