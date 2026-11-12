@@ -69,9 +69,12 @@ struct RangeQueryBIT {
             bit1[i] += delta; 
         }
     }
-    void updateB2(int i , int delta) {
+    /* Notice here: The 2nd */
+    
+    void updateB2(int i, int delta) {
+        int value = i*delta;
         for (; i <= n; i += i & -i) {
-            bit2[i] += i*delta;
+            bit2[i] += value;
         }
     }
     void updateRange(int l, int r, int delta) {
@@ -128,6 +131,6 @@ signed main() {
         b2.updateB2(i, diff[i-1]);
     }
     b2.updateRange(1, 3, 20);
-    cout << b2.rangeSumQuery(1, 3) << "\n";
+    cout << "Range Sum Query after Range Update: " << b2.rangeSumQuery(1, 3) << "\n";
     return 0;
 }
