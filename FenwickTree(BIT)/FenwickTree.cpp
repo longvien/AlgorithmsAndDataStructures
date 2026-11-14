@@ -134,5 +134,3 @@ signed main() {
     cout << "Range Sum Query after Range Update: " << b2.rangeSumQuery(1, 3) << "\n";
     return 0;
 }
-
-
